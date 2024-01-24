@@ -1,5 +1,1 @@
-Here you can say lots of fun things about your site.
-
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+For now, this is just a collection of "how-to" articles. Instead of keeping them locally on my computer, I can just as well share them.
