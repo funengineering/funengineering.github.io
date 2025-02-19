@@ -1,6 +1,6 @@
-# RPi-based temperature and humidity logger for Shelly H&T
+# RPi-based temperature and humidity logger for Shelly HT
 
-## Record and visualize your temperature/humidity data locally for free &ndash; No cloud required
+## Record and visualize your temperature/humidity data for free &ndash; locally (no cloud required)
 This Raspberry Pi based data logger allows you to record and visualize the temperature and humidity data measured by your [Shelly H&T sensors](https://www.shelly.com/de/products/shelly-h-t-gen3-matte-white). This sensor can provide its measured data using the MQTT protocol. This article describes how to set up a Raspberry Pi to record and visualize the recorded temperature and humidity data continuously. It also shows the correct settings that make the sensor(s) aware of the logger. The solution is based on Mosquitto and Node-RED.
 
 ## What you need
