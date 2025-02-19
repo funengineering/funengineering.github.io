@@ -24,6 +24,7 @@ Options tab:
 - keep the default settings
 Save the settings. Then confirm the application of these settings by clicking the "Yes" button. Confirm to delete any data that the MicroSDCard might contain. The Raspberry Pi OS will be written on to the MicroSDCard. A window will inform you of the completion of the process.
 ![Choose OS to write to SDCard](images_ht_data_logger/Screenshot%202025-02-19%20224825.png)
+<img src="images_ht_data_logger/Screenshot%202025-02-19%20224825.png" alt="Choose OS to write to SDCard" width="200"/>
 [^1]: Wired LAN is more reliable than WLAN, therefore it is recommended to connect the RPi to the local network using a cable.
 
 ## Create Inkycal settings
