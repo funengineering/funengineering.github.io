@@ -11,18 +11,20 @@ To follow these instructions, you should have the following material available
 
 This text is based on version X.X.XX of the Raspberry Pi OS Lite (64-bit) ("bookworm").
 
-## Installation of the Raspberry Pi OS Lite (32-bit) on the SD card
-Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install the Raspberry Pi OS Lite (32-bit) on the SD card. When I performed this step, it was called "A port of Debian Bullseye with security updates and no desktop environment" in the list and had a publication date of 2023-05-03. Inkycal 2.0.2 does not work with the newer "bookworm" version of Raspberry Pi OS[^1].
-[^1]: The newer version 2.0.3 of Inkycal is compatible with the "bookworm" version of Raspberry Pi OS. I have not tried using this combination. However, this text is *not* based on these newer versions.
-Use these addtional settings (available when clicking on the gear button):
-- set hostname: checked, `inkycal`
-- enable SSH: checked, option "use password authentication"
-- set username and password: checked, username `pi` and password `raspberry` (or any other password you like)
-- configure wifi: enter the SSID and the password of your local wireless network and select the appropriate country
+## Installation of the Raspberry Pi OS Lite (64-bit) on the SD card
+Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install the Raspberry Pi OS Lite (64-bit) on the SD card. At the time I performed this step, it was called "A port of Debian Bookworm with no desktop environment (Compatible with Raspberry Pi 3/4/400/5)" and had a publication date of 2024-11-19.
+Edit the additional settings by clicking the corresponding button.
+General tab:
+- set username and password: checked, username `pi` and a safe password (i. e. not `raspberry`)
+- configure wifi (if needed)[^1]: enter the SSID and the password of your local wireless network and select the appropriate country
 - set locale settings: checked, select the time zone and keyboard layout that match your location.
-Write the OS to the SD card.
-
-Note: The SD card containing the Raspberry Pi OS is formatted for Linux. This can cause strange messages when inserting this SD card into a computer running Windows 10. If asked, always reject requests to format the SD card.
+Services tab:
+- enable SSH: checked, option "use password authentication"
+Options tab:
+- keep the default settings
+Save the settings. Then confirm the application of these settings by clicking the "Yes" button. Confirm to delete any data that the MicroSDCard might contain. The Raspberry Pi OS will be written on to the MicroSDCard. A window will inform you of the completion of the process.
+![Choose OS to write to SDCard](images_ht_data_logger/Screenshot%202025-02-19%20224825.png)
+[^1]: Wired LAN is more reliable than WLAN, therefore it is recommended to connect the RPi to the local network using a cable.
 
 ## Create Inkycal settings
 Inkycal is customizeable and lets you choose what it shall display on the ePaper display. The author of Inkycal created a [user-friendly web interface](https://aceinnolab.com/inkycal/ui) that allows you to interactively configure the look of your Inkycal.
