@@ -30,35 +30,20 @@ Save the settings. Then confirm the application of these settings by clicking th
 
 Note: Wired LAN is more reliable than WLAN, therefore it is recommended to connect the RPi to the local network using a cable.
 
-![Choose OS to write to SDCard](/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224825.png)
-
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224825.png" alt="Choose OS to write to SDCard" width="200"/>
 
-## Create Inkycal settings
-Inkycal is customizeable and lets you choose what it shall display on the ePaper display. The author of Inkycal created a [user-friendly web interface](https://aceinnolab.com/inkycal/ui) that allows you to interactively configure the look of your Inkycal.
-For me, it worked with the following settings:
-- Model: 9.7in ePaper
-- Update interval: every 15 minutes[^2]
-- Orientation: Flex cable left
-- Show border around each module: no (unchecked)
-- Info about calibration: 0; 12; 18 (unchanged)
-- Show time of last update: yes (checked), height 30 pixels
-- Language: (select according to your preference)
-- Font size: 30
-- Padding top/bottom: 10 pixels
-- Padding right/left: 10 pixels
-- Module 1: Calendar
-- Module height: 100
-- Start of week: Monday
-- Show parsed events: True
-- iCalendar URL(s): `https://calendar.google.com/calendar/ical/xyz%40gmail.com/private-0123456789abcdef0123456789abcdef/basic.ics`[^3]
-- iCalendar file paths: (leave empty)
-- Token for custom date formatting: (leave empty)
-- Token for custom time formatting: (leave empty)
-[^2]: If you are using a PiSugar2 UPS, this setting will be overridden
-[^3]: If you are using Google calendar, look this up in your account settings. The 32 digit hexadecimal number after `private-` will be different from the one shown here. If you are using another calendar, enter the corresponding iCal URL.
-Using the web interface, download the settings file `settings.json` to your local computer.
-Copy the `settings.json` file to the SD card ("bootfs"). Eject the the SD card from your computer and insert it into the RPi.
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224856_edited.png" alt="Change settings" width="200"/>
 
-## Preparation of the Raspberry Pi OS
-(to be continued here...)
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225346_edited.png" alt="General settings" width="200"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225402.png" alt="Services settings" width="200"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225422.png" alt="Options settings" width="200"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225451.png" alt="Confirm to use settings" width="200"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225517_edited.png" alt="Delete all data on SDCard" width="200"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20231116.png" alt="OS successfully written to SDCard" width="200"/>
+
+(To be continued here)
