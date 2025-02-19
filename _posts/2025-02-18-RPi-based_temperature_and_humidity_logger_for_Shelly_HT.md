@@ -16,16 +16,19 @@ Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install 
 Edit the additional settings by clicking the corresponding button.
 General tab:
 - set username and password: checked, username `pi` and a safe password (i. e. not `raspberry`)
-- configure wifi (if needed)[^1]: enter the SSID and the password of your local wireless network and select the appropriate country
+- configure wifi (only if needed): enter the SSID and the password of your local wireless network and select the appropriate country
 - set locale settings: checked, select the time zone and keyboard layout that match your location.
 Services tab:
 - enable SSH: checked, option "use password authentication"
 Options tab:
 - keep the default settings
 Save the settings. Then confirm the application of these settings by clicking the "Yes" button. Confirm to delete any data that the MicroSDCard might contain. The Raspberry Pi OS will be written on to the MicroSDCard. A window will inform you of the completion of the process.
+
+Note: Wired LAN is more reliable than WLAN, therefore it is recommended to connect the RPi to the local network using a cable.
+
 ![Choose OS to write to SDCard](/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224825.png)
+
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224825.png" alt="Choose OS to write to SDCard" width="200"/>
-[^1]: Wired LAN is more reliable than WLAN, therefore it is recommended to connect the RPi to the local network using a cable.
 
 ## Create Inkycal settings
 Inkycal is customizeable and lets you choose what it shall display on the ePaper display. The author of Inkycal created a [user-friendly web interface](https://aceinnolab.com/inkycal/ui) that allows you to interactively configure the look of your Inkycal.
