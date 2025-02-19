@@ -14,14 +14,18 @@ This text is based on version X.X.XX of the Raspberry Pi OS Lite (64-bit) ("book
 ## Installation of the Raspberry Pi OS Lite (64-bit) on the SD card
 Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install the Raspberry Pi OS Lite (64-bit) on the SD card. At the time I performed this step, it was called "A port of Debian Bookworm with no desktop environment (Compatible with Raspberry Pi 3/4/400/5)" and had a publication date of 2024-11-19.
 Edit the additional settings by clicking the corresponding button.
+
 General tab:
 - set username and password: checked, username `pi` and a safe password (i. e. not `raspberry`)
 - configure wifi (only if needed): enter the SSID and the password of your local wireless network and select the appropriate country
 - set locale settings: checked, select the time zone and keyboard layout that match your location.
+
 Services tab:
 - enable SSH: checked, option "use password authentication"
+
 Options tab:
 - keep the default settings
+
 Save the settings. Then confirm the application of these settings by clicking the "Yes" button. Confirm to delete any data that the MicroSDCard might contain. The Raspberry Pi OS will be written on to the MicroSDCard. A window will inform you of the completion of the process.
 
 Note: Wired LAN is more reliable than WLAN, therefore it is recommended to connect the RPi to the local network using a cable.
