@@ -40,7 +40,7 @@ Note: Wired LAN is more reliable than WLAN, therefore it is recommended to conne
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225422.png" alt="Options settings" width="200"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225451.png" alt="Confirm to use settings" width="200"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225451_edited.png" alt="Confirm to use settings" width="200"/>
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225517_edited.png" alt="Delete all data on SDCard" width="200"/>
 
