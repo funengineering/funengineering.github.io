@@ -1,17 +1,15 @@
-# How to install Inkycal on a Raspberry Pi Zero W
+# RPi-based temperature and humidity logger for Shelly H&T
 
-[Inkycal](https://github.com/aceinnolab/Inkycal) is a cool project that transforms an ePaper display attached to a Raspberry Pi into a customizable wall calendar. It automatically retrieves the calendar entries from your online calendar and displays them nicely.
-
-Even though the project website contains detailed installation instructions, I noticed that there are some pitfalls during the installation. This post shows how I got it to work. If you tried to install Inkycal before and ran into trouble when installing the required Python packages, you might find a solution here.
+## Record and visualize your temperature/humidity data locally for free &ndash; No cloud required
+This Raspberry Pi based data logger allows you to record and visualize the temperature and humidity data measured by your [Shelly H&T sensors](https://www.shelly.com/de/products/shelly-h-t-gen3-matte-white). This sensor can provide its measured data using the MQTT protocol. This article describes how to set up a Raspberry Pi to record and visualize the recorded temperature and humidity data continuously. It also shows the correct settings that make the sensor(s) aware of the logger. The solution is based on Mosquitto and Node-RED.
 
 ## What you need
 To follow these instructions, you should have the following material available
-- a Raspberry Pi Zero W (including power supply and MicroSD card)
-- an ePaper display that is supported by Inkycal (in my case, it is a [Waveshare 9.7inch ePaper display](https://www.waveshare.com/9.7inch-e-paper-hat.htm))
-- temporarily during the installation: a more powerful Raspberry Pi (for me, a RPi 3 Model B V1.2 worked fine)
-- optionally: a [PiSugar2](https://www.pisugar.com/) uninterruptible power supply (tailored to fit the RPi Zero W).
+- a Raspberry Pi, the corresponding power supply and MicroSD card (in my case, it is a Raspberry Pi Model B V1.2)
+- at least one Shelly H&T sensor
+- during the installation: access to the (headless) RPi via SSH (e. g. from a laptop or desktop computer)
 
-This text is based on version 6.1.21 of the Raspberry Pi OS Lite (32-bit) ("bullseye") and on the version 2.0.2 of Inkycal. Note that the Raspberry Pi Zero W is not capable of running the 64-bit version of the Raspberry Pi OS.
+This text is based on version X.X.XX of the Raspberry Pi OS Lite (64-bit) ("bookworm").
 
 ## Installation of the Raspberry Pi OS Lite (32-bit) on the SD card
 Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install the Raspberry Pi OS Lite (32-bit) on the SD card. When I performed this step, it was called "A port of Debian Bullseye with security updates and no desktop environment" in the list and had a publication date of 2023-05-03. Inkycal 2.0.2 does not work with the newer "bookworm" version of Raspberry Pi OS[^1].
