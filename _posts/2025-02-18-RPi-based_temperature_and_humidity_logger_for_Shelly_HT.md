@@ -47,3 +47,4 @@ Note: Wired LAN is more reliable than WLAN, therefore it is recommended to conne
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20230116.png" alt="OS successfully written to SDCard" width="200"/>
 
 (To be continued here)
+
