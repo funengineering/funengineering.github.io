@@ -5,26 +5,30 @@ Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install 
 
 Edit the additional settings by clicking the corresponding button.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224825.png" alt="Choose OS to write to SDCard" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224856_edited.png" alt="Change settings" width="300"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224825.png" alt="Choose OS to write to SDCard" width="360"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224856_edited.png" alt="Change settings" width="360"/>
 
 General tab:
 - set username and password: checked, username `pi` and a safe password (i. e. not `raspberry`)
 - configure wifi (only if needed): enter the SSID and the password of your local wireless network and select the appropriate country
 - set locale settings: checked, select the time zone and keyboard layout that match your location.
+
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225346_edited.png" alt="General settings" width="400"/>
 
 Services tab:
 - enable SSH: checked, option "use password authentication"
+
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225402.png" alt="Services settings" width="400"/>
 
 Options tab:
 - keep the default settings
+
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225422.png" alt="Options settings" width="400"/>
 
 Save the settings. Then confirm the application of these settings by clicking the "Yes" button. Confirm to delete any data that the MicroSDCard might contain. The Raspberry Pi OS will be written on to the MicroSDCard. A window will inform you of the completion of the process.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225451_edited.png" alt="Confirm to use settings" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225517_edited.png" alt="Delete all data on SDCard" width="300"/>
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20230116.png" alt="OS successfully written to SDCard" width="300"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225451_edited.png" alt="Confirm to use settings" width="360"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225517_edited.png" alt="Delete all data on SDCard" width="360"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20230116.png" alt="OS successfully written to SDCard" width="360"/>
 
 Note:
 Wired LAN is more reliable than WLAN, therefore it is recommended to connect the RPi to the local network using a cable.
