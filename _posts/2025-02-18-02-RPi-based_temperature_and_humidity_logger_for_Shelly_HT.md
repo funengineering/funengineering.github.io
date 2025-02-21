@@ -3,9 +3,11 @@
 ## Installation of the Raspberry Pi OS Lite (64-bit) on the SD card
 Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install the Raspberry Pi OS Lite (64-bit) on the SD card. At the time I performed this step, it was called "A port of Debian Bookworm with no desktop environment (Compatible with Raspberry Pi 3/4/400/5)" and had a publication date of 2024-11-19. This corresponds to version 6.6.51 of the Raspberry Pi OS Lite (64-bit) ("bookworm").
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224825.png" alt="Choose OS to write to SDCard" width="400"/>
+
 Edit the additional settings by clicking the corresponding button.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224825.png" alt="Choose OS to write to SDCard" width="360"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224856_edited.png" alt="Change settings" width="360"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20224856_edited.png" alt="Change settings" width="400"/>
 
 General tab:
 - set username and password: checked, username `pi` and a safe password (i. e. not `raspberry`)
@@ -26,9 +28,11 @@ Options tab:
 
 Save the settings. Then confirm the application of these settings by clicking the "Yes" button. Confirm to delete any data that the MicroSDCard might contain. The Raspberry Pi OS will be written on to the MicroSDCard. A window will inform you of the completion of the process.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225451_edited.png" alt="Confirm to use settings" width="360"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225517_edited.png" alt="Delete all data on SDCard" width="360"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225451_edited.png" alt="Confirm to use settings" width="400"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20230116.png" alt="OS successfully written to SDCard" width="360"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225517_edited.png" alt="Delete all data on SDCard" width="400"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20230116.png" alt="OS successfully written to SDCard" width="400"/>
 
 Note:
 Wired LAN is more reliable than WLAN, therefore it is recommended to connect the RPi to the local network using a cable.
@@ -47,10 +51,12 @@ Edit the settings of your network's router such that it assigns the IP address y
 
 Use your favorite SSH client (e. g. PuTTY) to connect to the RPi from your laptop or desktop computer. Create an SSH connection to your RPi by providing its IP address. Use port 22, as this is the standard port for SSH. When the connection is established, you will see a terminal window showing a login prompt. Use the username and password defined during the OS installation to log in.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232418.png" alt="PuTTY parameters" width="400"/>
+
 During the first login, you will be asked if you trust the client to be the correct one. In your home network, there is most likely no risk of someone else trying to set up a malicious, fake RPi. Therefore, it is ok to confirm this.
 
 You should now see the Linux command prompt. Type the command `uname -a`. It will output the OS version you are using.
 
 End the SSH session with the `exit` command. If you are using PuTTY as a SSH client, this will close your terminal window.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232418.png" alt="PuTTY parameters" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232459.png" alt="Terminal window with first login" width="420"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232459.png" alt="Terminal window with first login" width="600"/>
