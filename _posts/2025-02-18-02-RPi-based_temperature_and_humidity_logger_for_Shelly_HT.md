@@ -30,11 +30,19 @@ Wired LAN is more reliable than WLAN, therefore it is recommended to connect the
 
 ## Network settings
 
-To login to your RPi using ssh (secure shell), it might be helpful to assign a fixed IP address to it. You may need the MAC address of the RPi. The MAC address is usually shown as a hexadecimal number having the format NN:NN:NN:NN:NN:NN (total of 12 hex digits (0-9, A-F)). If you don't know it, you can find it using a network scanner.
+To login to your RPi using SSH (secure shell), it might be helpful to assign a fixed IP address to it. You may need the MAC address of the RPi. The MAC address is usually shown as a hexadecimal number having the format NN:NN:NN:NN:NN:NN (total of 12 hex digits (0-9, A-F)). If you don't know it, you can find it using a network scanner.
 
 Edit your router's settings in your network's router such that it assigns an IP address you define to the MAC address of your RPi. Below, I will be assuming that the IP address of the RPi is 192.168.178.28. Depending on your network's settings, you might have to use a different address, e. g. 192.168.xxx.xxx or 10.xxx.xxx.xxx.
 
 
 ## First login
 
-Use your favorite ssh client (e. g. PuTTY) to connect to the RPi from your laptop or desktop computer.
+Use your favorite SSH client (e. g. PuTTY) to connect to the RPi from your laptop or desktop computer. Create an SSH connection to your RPi by providing its IP address. Use port 22, as this is the standard port for SSH. When the connection is established, you will see a terminal window showing a login prompt. Use the username and password defined during the OS installation to log in.
+
+During the first login, you will be asked if you trust the client to be the correct one. In your home network, there is most likely no risk of someone else trying to set up a malicious, fake RPi. Therefore, it is ok to confirm this.
+
+You should now see the Linux command prompt. Type the command `uname -a`. It will output the OS version you are using.
+
+End the SSH session with the `exit` command. If you are using PuTTY as a SSH client, this will close your terminal window.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232418.png" alt="PuTTY parameters" width="200"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232459.png" alt="Terminal window with first login" width="200"/>
