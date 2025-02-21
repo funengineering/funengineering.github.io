@@ -47,4 +47,4 @@ You should now see the Linux command prompt. Type the command `uname -a`. It wil
 
 End the SSH session with the `exit` command. If you are using PuTTY as a SSH client, this will close your terminal window.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232418.png" alt="PuTTY parameters" width="200"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232459.png" alt="Terminal window with first login" width="200"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232418.png" alt="PuTTY parameters" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232459.png" alt="Terminal window with first login" width="300"/>
