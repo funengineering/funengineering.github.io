@@ -9,7 +9,7 @@ To follow these instructions, you should have the following material available
 - at least one Shelly H&T sensor
 - during the installation: access to the (headless) RPi via SSH (e. g. from a laptop or desktop computer)
 
-This text is based on version X.X.XX of the Raspberry Pi OS Lite (64-bit) ("bookworm").
+This text is based on version 6.6.51 of the Raspberry Pi OS Lite (64-bit) ("bookworm").
 
 ## Installation of the Raspberry Pi OS Lite (64-bit) on the SD card
 Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install the Raspberry Pi OS Lite (64-bit) on the SD card. At the time I performed this step, it was called "A port of Debian Bookworm with no desktop environment (Compatible with Raspberry Pi 3/4/400/5)" and had a publication date of 2024-11-19.
