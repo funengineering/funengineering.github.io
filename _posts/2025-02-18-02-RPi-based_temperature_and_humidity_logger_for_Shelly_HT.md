@@ -49,13 +49,15 @@ Edit the settings of your network's router such that it assigns the IP address y
 
 ## First login
 
-Use your favorite SSH client (e. g. PuTTY) to connect to the RPi from your laptop or desktop computer. Create a SSH connection to your RPi by providing its IP address. Use port 22, which is the default for SSH. When the connection is established, you will see a terminal window showing a login prompt. Use the username and password defined during the OS installation to log in.
+Use your favorite SSH client (e. g. PuTTY) to connect to the RPi from your laptop or desktop computer. Create a SSH connection to your RPi by providing its IP address. Use port 22, which is the default for SSH.
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232418.png" alt="PuTTY parameters" width="400"/>
 
 During the first login, you will be asked if you trust the client to be the correct one. In your home network, there is most likely no risk of someone else trying to set up a malicious, fake RPi. Therefore, it is ok to confirm this.
 
-You should now see the Linux command prompt. Type the command `uname -a`. It will output the OS version you are using.
+When the connection is established, you will see a terminal window showing a login prompt. Use the username and password defined during the OS installation to log in.
+
+You should now see the Linux command prompt. As a test, type the command `uname -a`. It will output the OS version you are using.
 
 End the SSH session with the `exit` command. If you are using PuTTY as a SSH client, this will close your terminal window.
 
