@@ -11,18 +11,20 @@ General tab:
 - set username and password: checked, username `pi` and a safe password (i. e. not `raspberry`)
 - configure wifi (only if needed): enter the SSID and the password of your local wireless network and select the appropriate country
 - set locale settings: checked, select the time zone and keyboard layout that match your location.
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225346_edited.png" alt="General settings" width="400"/>
 
 Services tab:
 - enable SSH: checked, option "use password authentication"
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225402.png" alt="Services settings" width="400"/>
 
 Options tab:
 - keep the default settings
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225346_edited.png" alt="General settings" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225402.png" alt="Services settings" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225422.png" alt="Options settings" width="300"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225422.png" alt="Options settings" width="400"/>
 
 Save the settings. Then confirm the application of these settings by clicking the "Yes" button. Confirm to delete any data that the MicroSDCard might contain. The Raspberry Pi OS will be written on to the MicroSDCard. A window will inform you of the completion of the process.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225451_edited.png" alt="Confirm to use settings" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225517_edited.png" alt="Delete all data on SDCard" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20230116.png" alt="OS successfully written to SDCard" width="300"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225451_edited.png" alt="Confirm to use settings" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225517_edited.png" alt="Delete all data on SDCard" width="300"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20230116.png" alt="OS successfully written to SDCard" width="300"/>
 
 Note:
 Wired LAN is more reliable than WLAN, therefore it is recommended to connect the RPi to the local network using a cable.
@@ -47,4 +49,4 @@ You should now see the Linux command prompt. Type the command `uname -a`. It wil
 
 End the SSH session with the `exit` command. If you are using PuTTY as a SSH client, this will close your terminal window.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232418.png" alt="PuTTY parameters" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232459.png" alt="Terminal window with first login" width="450"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232418.png" alt="PuTTY parameters" width="300"/> <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232459.png" alt="Terminal window with first login" width="420"/>
