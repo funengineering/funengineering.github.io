@@ -49,7 +49,7 @@ Edit the settings of your network's router such that it assigns the IP address y
 
 ## First login
 
-Use your favorite SSH client (e. g. PuTTY) to connect to the RPi from your laptop or desktop computer. Create a SSH connection to your RPi by providing its IP address. Use port 22, as this is the standard port for SSH. When the connection is established, you will see a terminal window showing a login prompt. Use the username and password defined during the OS installation to log in.
+Use your favorite SSH client (e. g. PuTTY) to connect to the RPi from your laptop or desktop computer. Create a SSH connection to your RPi by providing its IP address. Use port 22, which is the default for SSH. When the connection is established, you will see a terminal window showing a login prompt. Use the username and password defined during the OS installation to log in.
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232418.png" alt="PuTTY parameters" width="400"/>
 
