@@ -120,11 +120,8 @@ In the first terminal window, publish the test message, now also providing the u
 
 Now, you can also try to connect to your MQTT broker from another device in your network, e. g. from your desktop computer or from a mobile phone with an MQTT client app (e. g. MyMQTT on Android). To establish a connection, you will need the IP address of your RPi, the port number of the MQTT broker (we set it to 1883), the username (pi) and the password. In my case, I also had to provide the MQTT version, where I chose V3.
 
-<img src="/docs/assets/img/ht_logger/Screenshot_20250309-170957.png" alt="MQTT settings" width="200"/>
-<img src="/docs/assets/img/ht_logger/Screenshot_20250309-171035.png" alt="Subscription to topic" width="200"/>
-<img src="/docs/assets/img/ht_logger/Screenshot_20250309-171046.png" alt="Subscription activated" width="200"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250309-170957.png" alt="MQTT settings" width="200"/> <img src="/docs/assets/img/ht_logger/Screenshot_20250309-171035.png" alt="Subscription to topic" width="200"/> <img src="/docs/assets/img/ht_logger/Screenshot_20250309-171046.png" alt="Subscription activated" width="200"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot_20250309-171133.png" alt="Publishing a message" width="200"/>
-<img src="/docs/assets/img/ht_logger/Screenshot_20250309-171215.png" alt="Seeing the message on the mobile device" width="200"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250309-171133.png" alt="Publishing a message" width="200"/> <img src="/docs/assets/img/ht_logger/Screenshot_20250309-171215.png" alt="Seeing the message on the mobile device" width="200"/>
 
 <img src="/docs/assets/img/ht_logger/Screenshot%2020250309%20171300.png" alt="Seeing the message on the RPi" width="400"/>
