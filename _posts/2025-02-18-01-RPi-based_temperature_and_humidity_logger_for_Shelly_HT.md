@@ -40,6 +40,8 @@ Wired LAN is more reliable than WLAN, therefore it is recommended to connect the
 
 ## Network settings
 
+Insert the SDCard into your RPi. If you are using a wired network, also connect the LAN cable to the RPi. Start the RPi by connecting it to its power supply.
+
 To login to your RPi using SSH (secure shell), it might be helpful to assign a fixed IP address to it. By default, your RPi receives its IP address from your router via the dynamic host configuration protocol (DHCP). Thus, you have to tell your router to recognize your RPi by its unique MAC address and to assign the IP address of your choice to it.
 
 If you don't know your RPi's MAC address, you can find it using a network scanner. Download a network scanner app for your mobile phone (e. g. Fing or Net Analyzer), make sure the phone is connected to your home network and perform a network scan. Your RPi should show up in the list of network devices. In the details of this device, you should see its MAC address. The MAC address is typically shown as a hexadecimal number having the format NN:NN:NN:NN:NN:NN (total of 12 hex digits (0-9, A-F), separated in groups of two digits by colons). 
