@@ -18,7 +18,7 @@ Enable the automatic start of the MQTT broker using the following command.
 
 `sudo systemctl enable mosquitto`
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20144104.png" alt="Installation of Mosquitto clients and enabling automatic startup" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20144104.png" alt="Installation of Mosquitto clients and enabling automatic startup" width="600"/>
 
 
 
