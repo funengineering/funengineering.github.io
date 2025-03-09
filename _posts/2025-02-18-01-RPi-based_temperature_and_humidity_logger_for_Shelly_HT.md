@@ -62,3 +62,16 @@ You should now see the Linux command prompt. As a test, type the command `uname 
 End the SSH session with the `exit` command. If you are using PuTTY as a SSH client, this will close your terminal window.
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-21%20232459.png" alt="Terminal window with first login" width="600"/>
+
+
+## Update the package manager
+
+Software installation is managed by the package manager. Before using it, make sure that it knows about the latest updates. Do so by logging into your RPi via SSH. Then, issue the command:
+
+`sudo apt update`
+
+Then, do a reboot with the command
+
+`sudo reboot`
+
+This will terminate the SSH connection. Wait for the RPi to reboot. Then, establish a new SSH connection with PuTTY.
