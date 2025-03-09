@@ -90,7 +90,7 @@ Check the status of Mosquitto.
 
 `sudo systemctl status mosquitto`
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20161536.png" alt="sudo systemctl status mosquitto" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20162311.png" alt="sudo systemctl status mosquitto" width="400"/>
 
 
 The status should be "active (running)". Press `q` to exit from the status to the command line.
