@@ -28,13 +28,13 @@ Check if it worked.
 
 `cat /etc/apt/sources.list.d/influxdata.list`
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20224002" alt="Gaining access to the InfluxDB repository" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20224002.png" alt="Gaining access to the InfluxDB repository" width="400"/>
 
 Check if you have an old key that should be removed.
 
 `ls -al /etc/apt/trusted.gpg.d`
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20224205" alt="Checking for non-existence of file influxdbd.gpg" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20224205.png" alt="Checking for non-existence of file influxdbd.gpg" width="400"/>
 
 If you see a file called `influxdata-archive.gpg`, this is ok. If you see any file called `influxdb.gpg`, you should remove it (`sudo rm -f /etc/apt/trusted.gpg.d/influxdb.gpg`). Normally, `influxdb.gpg` should not exist and deleting it should not be necessary.
 
