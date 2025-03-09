@@ -38,7 +38,7 @@ Now, publish a message in the left terminal.
 
 The message, which you just published in the topic "/test/topic", was received in the right terminal window because it is subscribed to messages in the topic "/test/topic".
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20150215.png" alt="Test message sent from publisher to subscriber via MQTT broker" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20150215.png" alt="Test message sent from publisher to subscriber via MQTT broker" width="700"/>
 
 If the message does not appear in the right terminal window, check if mosquitto (your MQTT broker) is running.
 
