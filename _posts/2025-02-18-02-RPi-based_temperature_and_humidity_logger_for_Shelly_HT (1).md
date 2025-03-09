@@ -116,7 +116,7 @@ In the first terminal window, publish the test message, now also providing the u
 
 `mosquitto_pub -h localhost -t /test/topic -m "Hello Mosquitto!" -u pi -P your_password`
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20165734_edited.png" alt="Test message sent from publisher to subscriber via MQTT broker with authentication" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20165734_edited.png" alt="Test message sent from publisher to subscriber via MQTT broker with authentication" width="700"/>
 
 Now, you can also try to connect to your MQTT broker from another device in your network, e. g. from your desktop computer or from a mobile phone with an MQTT client app (e. g. MyMQTT on Android). To establish a connection, you will need the IP address of your RPi, the port number of the MQTT broker (we set it to 1883), the username (pi) and the password. In my case, I also had to provide the MQTT version, where I chose V3.
 
