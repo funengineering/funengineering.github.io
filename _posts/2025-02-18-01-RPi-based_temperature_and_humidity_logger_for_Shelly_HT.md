@@ -14,6 +14,8 @@ General tab:
 - configure wifi (only if needed): enter the SSID and the password of your local wireless network and select the appropriate country
 - set locale settings: checked, select the time zone and keyboard layout that match your location.
 
+If you are planning to operate the RPi on a wired network, disable wifi.
+
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-02-19%20225346_edited.png" alt="General settings" width="400"/>
 
 Services tab:
