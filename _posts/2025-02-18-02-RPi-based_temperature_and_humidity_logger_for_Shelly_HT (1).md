@@ -125,3 +125,5 @@ Now, you can also try to connect to your MQTT broker from another device in your
 <img src="/docs/assets/img/ht_logger/Screenshot_20250309-171133.png" alt="Publishing a message" width="200"/> <img src="/docs/assets/img/ht_logger/Screenshot_20250309-171215.png" alt="Seeing the message on the mobile device" width="200"/>
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20171300.png" alt="Seeing the message on the RPi" width="400"/>
+
+At this point, you might want to shut down your RPi, remove the SDCard and create a backup image of the SDCard. This will allow you go back to this point by flashing this image to SDCard if anything goes wrong later on.
