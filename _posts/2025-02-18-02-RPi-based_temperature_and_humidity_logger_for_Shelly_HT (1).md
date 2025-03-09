@@ -98,4 +98,33 @@ The status should be "active (running)". Press `q` to exit from the status to th
 
 ## Testing the changed configuration
 
+The changed configuration should now be active. First, check if anonymous publishing is now forbidden.
 
+`mosquitto_pub -h localhost -t /test/topic -m "Hello Mosquitto!"`
+
+This should fail with an error.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20162808.png" alt="Connection refused, not authorized" width="400"/>
+
+Open a second terminal window again as you will again publish a message in the first window and receive it in the second window.
+
+In the second terminal window, subscribe to the topic that will later receive the message. Note that the command now includes the username and password (replace "your_password" by your actual password).
+
+`mosquitto_sub -h localhost -t /test/topic -u pi -P your_password`
+
+In the first terminal window, publish the test message, now also providing the username and password.
+
+`mosquitto_pub -h localhost -t /test/topic -m "Hello Mosquitto!" -u pi -P your_password`
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20165734_edited.png" alt="Test message sent from publisher to subscriber via MQTT broker with authentication" width="400"/>
+
+Now, you can also try to connect to your MQTT broker from another device in your network, e. g. from your desktop computer or from a mobile phone with an MQTT client app (e. g. MyMQTT on Android). To establish a connection, you will need the IP address of your RPi, the port number of the MQTT broker (we set it to 1883), the username (pi) and the password. In my case, I also had to provide the MQTT version, where I chose V3.
+
+<img src="/docs/assets/img/ht_logger/Screenshot_20250309-170957.png" alt="MQTT settings" width="200"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250309-171035.png" alt="Subscription to topic" width="200"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250309-171046.png" alt="Subscription activated" width="200"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot_20250309-171133.png" alt="Publishing a message" width="200"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250309-171215.png" alt="Seeing the message on the mobile device" width="200"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%2020250309%20171300.png" alt="Seeing the message on the RPi" width="400"/>
