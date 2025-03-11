@@ -127,3 +127,11 @@ Now, you can also try to connect to your MQTT broker from another device in your
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20171300.png" alt="Seeing the message on the RPi" width="400"/>
 
 At this point, you might want to shut down your RPi, remove the SDCard and create a backup image of the SDCard. This will allow you go back to this point by flashing this image to SDCard if anything goes wrong later on.
+
+
+## Links
+
+- [undated: Mosquitto download page](https://mosquitto.org/download/) (very condensed, contains only rudimentary installation instructions)
+- [undated: mosquitto.conf man page](https://mosquitto.org/man/mosquitto-conf-5.html) (documentation of the configuration file)
+- [2022-08-14: Install an MQTT Server and Node-RED on Raspberry Pi for Home Automation](https://www.makeuseof.com/install-mqtt-server-node-red-raspberry-pi-home-automation/)
+- [undated: Mosquitto MQTT-Broker-Installation auf Raspberry pi](https://myhomethings.eu/de/mosquitto-mqtt-broker-installation-auf-raspberry-pi/) (the config file does not work (anymore) as described in this tutorial)
