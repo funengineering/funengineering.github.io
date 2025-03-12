@@ -18,18 +18,47 @@ Update the package database.
 
 `sudo apt update`
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20224002.png" alt="Gaining access to the InfluxDB repository" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20223934.png" alt="Adding the InfluxDB repository" width="400"/>
 
 
 
 ## Installing InfluxDB
 
-Now that you have access to the InfluxDB repository, you can install InfluxDB with the following command.
+Now that you have access to the InfluxDB repository, you can install InfluxDB with the following command. Confirm by pressing "y" when prompted.
 
 `sudo apt-get install influxdb2`
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20224313.png" alt="Installing InfluxDB V2" width="400"/>
+
+Next, enable the automatic start of InfluxDB upon startup of your RPi.
+
+`sudo systemctl enable influxdb`
+
+As InfluxDB is only started when you boot your RPi, it should not yet be running. You can check it with the following command.
+
+`sudo systemctl status influxdb`
+
+The line "Active" should be "inactive (dead)". Exit from the status page by pressing "q".
+
+Instead of rebooting your RPi, start InfluxDB manually.
+
+`sudo systemctl start influxdb`
+
+Now check the status again.
+
+`sudo systemctl status influxdb`
+
+The line "Active" should now be "active (running)".
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20225327.png" alt="Starting InfluxDB V2" width="400"/>
+
+In a browser on any device in your local network, you should now be able to access the web interface of InfluxDB. Opening a browser and navigate to [https://192.168.178.28:8086](https://192.168.178.28:8086). Be sure to replace the IP address (192.168.178.28) by the IP address that is assigned to _your_ RPi. You should see the "Welcome to InfluxDB" page.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20230103.png" alt="Starting InfluxDB V2" width="400"/>
+
 
 [to be continued here...]
+
 
 At this point, you might want to shut down your RPi, remove the SDCard and create a backup image of the SDCard. This will allow you go back to this point by flashing this image to SDCard if anything goes wrong later on.
 
