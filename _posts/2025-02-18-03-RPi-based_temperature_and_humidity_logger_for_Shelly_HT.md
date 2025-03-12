@@ -52,7 +52,9 @@ The line "Active" should now be "active (running)".
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20225327.png" alt="Starting InfluxDB V2" width="400"/>
 
-In a browser on any device in your local network, you should now be able to access the web interface of InfluxDB. Opening a browser and navigate to [https://192.168.178.28:8086](https://192.168.178.28:8086). Be sure to replace the IP address (192.168.178.28) by the IP address that is assigned to _your_ RPi. You should see the "Welcome to InfluxDB" page.
+In a browser on any device in your local network, you should now be able to access the web interface of InfluxDB. Opening a browser and navigate to [http://192.168.178.28:8086](http://192.168.178.28:8086). Be sure to replace the IP address (192.168.178.28) by the IP address that is assigned to _your_ RPi.
+
+You should see the "Welcome to InfluxDB" page.
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20230103.png" alt="Starting InfluxDB V2" width="400"/>
 
