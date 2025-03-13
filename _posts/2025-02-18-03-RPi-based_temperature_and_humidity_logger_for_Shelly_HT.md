@@ -59,6 +59,22 @@ You should see the "Welcome to InfluxDB" page.
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20230103.png" alt="Starting InfluxDB V2" width="400"/>
 
 
+## Setting up InfluxDB
+
+Continue by pressing the "get started" button. Fill in the fields for the initial user setup (username, password, initial organization name and initial bucket name). In the example here, following data is used:
+- username: pi
+- password: _[choose one]_
+- initial organization name: AS26
+- initial bucket name: MQTT_Live
+
+The "You are ready to go!" page should appear. It shows you the "operator API token" for the user "pi". Save it in a safe place. Then, click on "configure later". This takes you to the "Get started" page. At the bottom left, click on the button that expands menu items at the left.
+
+Now, you'll also save the "all access API token", which you'll be needing later on. From the menu items at the left, select "Load Data / API Tokens". Then, select "Generate API Token / All Access API Token". Enter a description, e. g. "pi's All Access Token" and press the "Save" button.
+
+Also save your All Access API Token in a safe place.
+
+
+
 [to be continued here...]
 
 
