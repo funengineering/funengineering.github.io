@@ -67,13 +67,31 @@ Continue by pressing the "get started" button. Fill in the fields for the initia
 - initial organization name: AS26
 - initial bucket name: MQTT_Live
 
-The "You are ready to go!" page should appear. It shows you the "operator API token" for the user "pi". Save it in a safe place. Then, click on "configure later". This takes you to the "Get started" page. At the bottom left, click on the button that expands menu items at the left.
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20230933.png" alt="Setup Initial User" width="400"/>
+
+
+The "You are ready to go!" page should appear. It shows you the "operator API token" for the user "pi". Save it in a safe place.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20232652_edited.png" alt="You are ready to go" width="400"/>
+
+Then, click on "configure later". This takes you to the "Get started" page. At the bottom left, click on the button that expands menu items at the left.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20233725.png" alt="Get started" width="400"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20233736.png" alt="Get started, menu expanded" width="400"/>
 
 Now, you'll also save the "all access API token", which you'll be needing later on. From the menu items at the left, select "Load Data / API Tokens". Then, select "Generate API Token / All Access API Token". Enter a description, e. g. "pi's All Access Token" and press the "Save" button.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20233954.png" alt="Load Data" width="400"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20234129.png" alt="Generate All Access API Token" width="400"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20234608_edited.png" alt="You've successfully created an API Token" width="400"/>
 
 Also save your All Access API Token in a safe place.
 
 
+## Create the data structure for the Shelly sensors
 
 [to be continued here...]
 
