@@ -126,8 +126,12 @@ Now, you can also try to connect to your MQTT broker from another device in your
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-03-09%20171300.png" alt="Seeing the message on the RPi" width="400"/>
 
+
+## What's next?
+
 At this point, you might want to shut down your RPi, remove the SDCard and create a backup image of the SDCard. On Windows, you can use [Win32 Disk Imager](https://win32diskimager.org/) to do this. It reads the complete SDCard and stores it to an img file. This will allow you go back to this point by flashing this image to SDCard if anything goes wrong later on. To save space, you can compress the img file with [7-Zip](https://www.7-zip.org/).
 
+Then, you'll be setting up InfluxDB. It will store all the temperature and humidity data of your Shelly sensors.
 
 ## Links
 
