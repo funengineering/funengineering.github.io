@@ -32,15 +32,14 @@ Choose the following answers to the questions:
 After completing the installation, you will see the message `Settings file written to /home/pi/.node-red/settings.js`. If you want to revise any of the choices you took just now, you can edit this file to adjust it.
 
 
+## Finalizing the installation on the command line
 
-## Title
-
-Text
+_[To be continued here.]_
 
 
 ## What's next?
 
-Text
+The only thing missing now are the Shelly sensors. Adjust their settings such that they provide their data to your RPi!
 
 
 ## Links
