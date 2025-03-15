@@ -1,105 +1,49 @@
-# RPi-based temperature and humidity logger for Shelly HT (Part 3: InfluxDB OSS v2 installation)
+# RPi-based temperature and humidity logger for Shelly HT (Part 4: Node-RED installation)
 
-Collecting and storing the temperature and humidity data will be done by InfluxDB. Therefore, you will now install InfluxDB.
+Node-RED will receive the temperature and humidity data from the Shellies and pass it on to InfluxDB, where it is stored. This post describes the installation and setup of Node-RED for this purpose.
 
-## Gaining access to the InfluxDB repository
+## Installation of Node-RED
 
-InfluxDB is not available from the default software repositories. Therefore, an additional repository must be added.
+The installation of Node-RED is performed by running a script. The following command downloads the installation script (`curl` command) and passes it directly to a `bash` shell to execute it. It is always good practice to mistrust any script before running it. You can check the [script](https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) before executing it by opening it in your browser. Note that you'll have to answer multiple questions during the installation. There is a time limit for responding to these questions (even though it is not visible). If no answer is provided within the time limit, the default option will be chosen automatically.
 
-The package manager needs a key to get access to the repository where InfluxDB is available. The following command adds this key. (On Windows, copy it to the clipboard and paste it in the PuTTY window by pressing the right mouse button.)
+If you want to follow the installation process, open a second SSH session and view the installation log file in realtime by issuing the command `tail -f /var/log/nodered-install.log`. This command only works once the installation has started in the original SSH session.
 
-`curl https://repos.influxdata.com/influxdata-archive.key | gpg --dearmor | sudo tee /usr/share/keyrings/influxdb-archive-keyring.gpg >/dev/null`
+Execute the installation script by entering the command below on the command line of the original SSH session.
 
-Add the InfluxDB to the sources the package manager will use. Again, make sure to type everything _exactly_ as shown below.
+`bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)`
 
-`echo "deb [signed-by=/usr/share/keyrings/influxdata-archive-keyring.gpg] https://repos.influxdata.com/debian stable main" | sudo tee /etc/apt/sources.list.d/influxdb.list`
+Choose the following answers to the questions:
+- Are you really sure to do this? Yes
+- Would you like to install Pi specific nodes? Yes
+- _[Now the installation will run on its own for a while. Follow the process in the second SSH session.]_
+- Settings file: Just press Enter to accept the default `/home/pi/.node-red/settings.js`
+- Do you want to setup user security: No (use cursor keys and press Enter)
+- Do you want to enable the Projects feature: No
+- Enter a name for your flows file: `flows.json` (accept the default by pressing Enter)
+- Provide a passphrase to encrypt your credentials file: _[enter a passphrase of your choice and store it in a safe place]_
+- Select a theme for the editor: default
+- Select the text editor component to use in the Node-RED Editor: monaco (default)
+- Allow Function nodes to load external modules: Yes
 
-Update the package database.
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-15%20224007.png" alt="Installation of Node-RED (part 1)" width="400"/>
 
-`sudo apt update`
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-15%20224038.png" alt="Installation of Node-RED (part 2)" width="400"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20223934.png" alt="Adding the InfluxDB repository" width="400"/>
-
-
-
-## Installing InfluxDB
-
-Now that you have access to the InfluxDB repository, you can install InfluxDB with the following command. Confirm by pressing "y" when prompted.
-
-`sudo apt-get install influxdb2`
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20224313.png" alt="Installing InfluxDB V2" width="400"/>
-
-Next, enable the automatic start of InfluxDB upon startup of your RPi.
-
-`sudo systemctl enable influxdb`
-
-As InfluxDB is only started when you boot your RPi, it should not yet be running. You can check it with the following command.
-
-`sudo systemctl status influxdb`
-
-The line "Active" should be "inactive (dead)". Exit from the status page by pressing "q".
-
-Instead of rebooting your RPi, start InfluxDB manually.
-
-`sudo systemctl start influxdb`
-
-Now check the status again.
-
-`sudo systemctl status influxdb`
-
-The line "Active" should now be "active (running)".
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20225327.png" alt="Starting InfluxDB V2" width="400"/>
-
-In a browser on any device in your local network, you should now be able to access the web interface of InfluxDB. Opening a browser and navigate to [http://192.168.178.28:8086](http://192.168.178.28:8086). Be sure to replace the IP address (192.168.178.28) by the IP address that is assigned to _your_ RPi.
-
-You should see the "Welcome to InfluxDB" page.
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-12%20230103.png" alt="Starting InfluxDB V2" width="400"/>
+After completing the installation, you will see the message `Settings file written to /home/pi/.node-red/settings.js`. If you want to revise any of the choices you took just now, you can edit this file to adjust it.
 
 
-## Setting up InfluxDB
 
-Continue by pressing the "get started" button. Fill in the fields for the initial user setup (username, password, initial organization name and initial bucket name). In the example here, following data is used:
-- username: pi
-- password: _[choose one]_
-- initial organization name: AS26
-- initial bucket name: MQTT_Live
+## Title
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20230933.png" alt="Setup Initial User" width="400"/>
-
-
-The "You are ready to go!" page should appear. It shows you the "operator API token" for the user "pi". Save it in a safe place.
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20232652_edited.png" alt="You are ready to go" width="400"/>
-
-Then, click on "configure later". This takes you to the "Get started" page. At the bottom left, click on the button that expands menu items at the left.
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20233725.png" alt="Get started" width="400"/>
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20233736.png" alt="Get started, menu expanded" width="400"/>
-
-Now, you'll also save the "all access API token", which you'll be needing later on. From the menu items at the left, select "Load Data / API Tokens". Then, select "Generate API Token / All Access API Token". Enter a description, e. g. "pi's All Access Token" and press the "Save" button.
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20233954.png" alt="Load Data" width="400"/>
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20234129.png" alt="Generate All Access API Token" width="400"/>
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20234608_edited.png" alt="You've successfully created an API Token" width="400"/>
-
-Also save your All Access API Token in a safe place.
+Text
 
 
 ## What's next?
 
-At this point, you might want to shut down your RPi, remove the SDCard and create a backup image of the SDCard. This will allow you go back to this point by flashing this image to SDCard if anything goes wrong later on.
-
-There's not much left to be done. The only thing missing is Node-RED, which receives the data from the MQTT broker and passes them on to InfluxDB. And of course, you want to set up your Shelly sensors to publish their data via MQTT. Just read on and you'll get there!
+Text
 
 
 ## Links
 
-- 2023-12-29: [Installing InfluxDB to the Raspberry Pi](https://pimylifeup.com/raspberry-pi-influxdb/)
-- undated: [influxdata download page](https://www.influxdata.com/downloads/)
-- undated: [influxdata installation instructions](https://docs.influxdata.com/influxdb/v2/install/) (outdated for Raspberry Pi OS bookworm)
+- undated: [Node-RED](https://nodered.org/)
+
