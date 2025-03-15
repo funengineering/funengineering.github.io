@@ -91,7 +91,7 @@ Now, you'll also save the "all access API token", which you'll be needing later 
 Also save your All Access API Token in a safe place.
 
 
-What's next?
+## What's next?
 
 At this point, you might want to shut down your RPi, remove the SDCard and create a backup image of the SDCard. This will allow you go back to this point by flashing this image to SDCard if anything goes wrong later on.
 
