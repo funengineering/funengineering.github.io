@@ -5,7 +5,7 @@ This Raspberry Pi based data logger allows you to record and visualize the tempe
 
 ## What you need
 To follow these instructions, you should have the following material available
-- a Raspberry Pi, the corresponding power supply and MicroSD card<br>(in my case, it is a Raspberry Pi Model B V1.2)
+- a Raspberry Pi, the corresponding power supply and MicroSD card<br>(in my case, it is a Raspberry Pi 4 Model B with 4GB RAM)
 - at least one Shelly H&T sensor
 - access to the (headless) RPi via SSH and with a web browser (e. g. from a laptop or desktop computer in the same network)
 
