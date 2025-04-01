@@ -12,7 +12,7 @@ The package manager needs a key to get access to the repository where InfluxDB i
 
 Add the InfluxDB to the sources the package manager will use. Again, make sure to type everything _exactly_ as shown below.
 
-`echo "deb [signed-by=/usr/share/keyrings/influxdata-archive-keyring.gpg] https://repos.influxdata.com/debian stable main" | sudo tee /etc/apt/sources.list.d/influxdb.list`
+`echo "deb [signed-by=/usr/share/keyrings/influxdb-archive-keyring.gpg] https://repos.influxdata.com/debian stable main" | sudo tee /etc/apt/sources.list.d/influxdb.list`
 
 Update the package database.
 
