@@ -59,6 +59,8 @@ Use your favorite SSH client (e. g. PuTTY) to connect to the RPi from your lapto
 
 During the first login, you will be asked if you trust the client to be the correct one. In your home network, there is most likely no risk of someone else trying to set up a malicious, fake RPi. Therefore, it is ok to confirm this.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-03-11%20231928.png" alt="PuTTY parameters" width="400"/>
+
 When the connection is established, you will see a terminal window showing a login prompt. Use the username and password defined during the OS installation to log in.
 
 You should now see the Linux command prompt. As a test, type the command `uname -a`. It will output the OS version you are using.
