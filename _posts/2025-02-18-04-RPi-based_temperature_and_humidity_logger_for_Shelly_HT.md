@@ -34,6 +34,39 @@ After completing the installation, you will see the message `Settings file writt
 
 ## Finalizing the installation on the command line
 
+### Require password for commands run as root using sudo
+
+The installation script displays instructions requesting you to increase the security of your system by prompting for a password when performing commands as root using sudo. The command below will implement this by disabling the file allowing the execution of sudo without entering a password.
+
+`sudo mv /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_pi-nopasswd~`
+
+### Activate the automatic start of Node-RED
+
+Check the status of the Node-RED service. Note that you will now be asked to enter your password because you are using the `sudo command`. This shows that the previous step was successful.
+
+`sudo systemctl status nodered.service`
+
+You should see the status of nodered.service. Its state is "disabled" and "inactive (dead)". Leave the status display by pressing "q".
+
+Enable the automatic start of the Node-RED service. (The command also works without the trailing ".service".) As you have previously entered your password for the sudo command, the password prompt does not show again this time.
+
+`sudo systemctl enable nodered.service`
+
+Check again the status of the Node-RED service.
+
+`sudo systemctl status nodered.service`
+
+The state has changed to "enabled" and "inactive (dead)". Now you can start the service.
+
+`sudo systemctl start nodered`
+
+Then, check again for the status of the service.
+
+`sudo systemctl status nodered`
+
+The status is now "enabled" and "active (running)". Leave the status display again by pressing "q".
+
+
 _[To be continued here.]_
 
 
