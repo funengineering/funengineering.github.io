@@ -19,7 +19,7 @@ By following these instructions, you will be installing these software component
 ## Procedure
 The main steps are:
 1. [Part 1: Installation of the Raspberry Pi OS](https://funengineering.github.io/2025/02/18/01-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
-2. Part 2: Installation of Mosquitto on the RPi
+2. [Part 2: Installation of Mosquitto on the RPi](/2025/02/18/02-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
 3. Part 3: Installation of InfluxDB on the RPi
 4. Part 4: Installation of Node-RED on the RPi
 5. Part 5: Configuration of the Shelly devices
