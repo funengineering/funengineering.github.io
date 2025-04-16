@@ -52,7 +52,7 @@ You should see the status of nodered.service. Its state is "disabled" and "inact
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-16%20224210.png" alt="Node-RED initially in disabled and inactive state." width="400"/>
 
-Enable the automatic start of the Node-RED service. (The command also works without the trailing `.service`.) As you have previously entered your password for the sudo command, the password prompt does not show again this time.
+Enable the automatic start of the Node-RED service. (The command also works without the trailing `.service`.) As you have previously entered your password for executing `systemctl` as root, the password prompt does not show again this time.
 
 `sudo systemctl enable nodered.service`
 
@@ -76,6 +76,23 @@ The status is now "enabled" and "active (running)". Leave the status display aga
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-16%20225227.png" alt="Node-RED in enabled and active state." width="400"/>
 
+### Prevent unauthorized changes of `settings.js`
+
+According to the instructions shown in the terminal during the installation of Node-RED, it is suggested to set the user root as the owner of the file `settings.js`. Do so by executing the `chown` command below.
+
+`sudo chown root:root ~/.node-red/settings.js`
+
+
+## Access Node-RED in the browser for the first time
+
+At this point, you can navigate to `http://192.168.178.28:1880` in a browser of any computer in your local network.
+
+You should see the "Welcome to Node-RED 4.0!" message window. Click on the Start button and read the description of the new features of Node-RED.
+
+
+## Save an image of the current state of your installation
+
+In case anything goes wrong later, it might be useful to have an image of the state of your SDCard at the current point. To obtain such an image, shut down your RPi (`sudo shutdown now`). When the shutdown has completed, remove the SDCard and create an image of it, e. g. with Win32Imager on a Windows PC. To save space on your PC, you can also compress the image once it was created.
 
 _[To be continued here.]_
 
