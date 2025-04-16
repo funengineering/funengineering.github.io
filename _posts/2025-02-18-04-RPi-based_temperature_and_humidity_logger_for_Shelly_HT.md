@@ -82,12 +82,16 @@ According to the instructions shown in the terminal during the installation of N
 
 `sudo chown root:root ~/.node-red/settings.js`
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-16%20232257.png" alt="Change owner of settings.js" width="400"/>
+
 
 ## Access Node-RED in the browser for the first time
 
 At this point, you can navigate to `http://192.168.178.28:1880` in a browser of any computer in your local network.
 
 You should see the "Welcome to Node-RED 4.0!" message window. Click on the Start button and read the description of the new features of Node-RED.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-16%20231249.png" alt="Welcome screen of Node-RED in the browser" width="400"/>
 
 
 ## Save an image of the current state of your installation
