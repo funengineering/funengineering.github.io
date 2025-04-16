@@ -52,7 +52,7 @@ You should see the status of nodered.service. Its state is "disabled" and "inact
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-16%20224210.png" alt="Node-RED initially in disabled and inactive state." width="400"/>
 
-Enable the automatic start of the Node-RED service. (The command also works without the trailing ".service".) As you have previously entered your password for the sudo command, the password prompt does not show again this time.
+Enable the automatic start of the Node-RED service. (The command also works without the trailing `.service`.) As you have previously entered your password for the sudo command, the password prompt does not show again this time.
 
 `sudo systemctl enable nodered.service`
 
