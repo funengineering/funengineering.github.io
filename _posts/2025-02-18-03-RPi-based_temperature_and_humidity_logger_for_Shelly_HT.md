@@ -93,7 +93,7 @@ Also save your All Access API Token in a safe place.
 
 ## What's next?
 
-At this point, you might want to shut down your RPi, remove the SDCard and create a backup image of the SDCard. This will allow you go back to this point by flashing this image to SDCard if anything goes wrong later on.
+At this point, you might want to shut down your RPi, remove the SDCard and create a backup image of the SDCard. This will allow you go back to this point by flashing this image to the SDCard if anything goes wrong later on.
 
 There's not much left to be done. The only thing missing is Node-RED, which receives the data from the MQTT broker and passes them on to InfluxDB. And of course, you want to set up your Shelly sensors to publish their data via MQTT. Just read on and you'll get there!
 
