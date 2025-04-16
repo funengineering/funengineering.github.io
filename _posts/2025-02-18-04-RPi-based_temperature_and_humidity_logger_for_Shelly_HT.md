@@ -40,6 +40,8 @@ The installation script displays instructions requesting you to increase the sec
 
 `sudo mv /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_pi-nopasswd~`
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-16%20223421.png" alt="Enable prompt for password when executing sudo" width="400"/>
+
 ### Activate the automatic start of Node-RED
 
 Check the status of the Node-RED service. Note that you will now be asked to enter your password because you are using the `sudo command`. This shows that the previous step was successful.
@@ -47,6 +49,8 @@ Check the status of the Node-RED service. Note that you will now be asked to ent
 `sudo systemctl status nodered.service`
 
 You should see the status of nodered.service. Its state is "disabled" and "inactive (dead)". Leave the status display by pressing "q".
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-16%20224210.png" alt="Node-RED initially in disabled and inactive state." width="400"/>
 
 Enable the automatic start of the Node-RED service. (The command also works without the trailing ".service".) As you have previously entered your password for the sudo command, the password prompt does not show again this time.
 
@@ -56,7 +60,11 @@ Check again the status of the Node-RED service.
 
 `sudo systemctl status nodered.service`
 
-The state has changed to "enabled" and "inactive (dead)". Now you can start the service.
+The state has changed to "enabled" and "inactive (dead)".
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-16%20224806.png" alt="Node-RED in enabled but inactive state." width="400"/>
+
+Now you can start the service.
 
 `sudo systemctl start nodered`
 
@@ -65,6 +73,8 @@ Then, check again for the status of the service.
 `sudo systemctl status nodered`
 
 The status is now "enabled" and "active (running)". Leave the status display again by pressing "q".
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-16%20225227.png" alt="Node-RED in enabled and active state." width="400"/>
 
 
 _[To be continued here.]_
