@@ -26,6 +26,7 @@ When you are connected to this Wi-Fi network, open a browser on your phone and e
 
 Note: The Shelly sensor is built to use as little power as possible, which allows it to operate for months on batteries. However, this also means that it will return to its power-saving state quite quickly. If this happens, the front display will go back to the normal temperature display and your mobile phone will lose its connection to the sensor. In this case, you have to press the button on the back of the sensor again. Then, connect again to the "ShellyHTG3-0123456789ABCDEF" Wi-Fi, confirm the missing internet connection and browse to 192.168.33.1 again. Then continue with the setup. Depending on how long it takes you to perform the setup, this might happen more than once. This might be somewhat annoying, but you will later love the long battery life if you operate your sensor without an external power source.
 
+[to be continued here...]
 
 ### 
 
