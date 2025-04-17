@@ -98,12 +98,10 @@ You should see the "Welcome to Node-RED 4.0!" message window. Click on the Start
 
 In case anything goes wrong later, it might be useful to have an image of the state of your SDCard at the current point. To obtain such an image, shut down your RPi (`sudo shutdown now`). When the shutdown has completed, remove the SDCard and create an image of it, e. g. with Win32DiskImager on a Windows PC. To save space on your PC, you can also compress the image once it was created.
 
-_[To be continued here.]_
-
 
 ## What's next?
 
-The only thing missing now are the Shelly sensors. Adjust their settings such that they provide their data to your RPi!
+Next, you will set up the Shelly sensors. You will integrate them in your wireless network and adjust their settings. This allows them to send their measured data to your RPi for further processing.
 
 
 ## Links
