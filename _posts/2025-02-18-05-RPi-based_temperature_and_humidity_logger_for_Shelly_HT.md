@@ -116,9 +116,14 @@ For the purpose of the setup described here, no cloud connection is needed. All 
 It is wise to keep the access point setting enabled. If your sensor loses connection to your Wi-Fi network, you can only access its settings if you can connect to it via the access point it provides (as you did during the inital setup). Therefore, keep the access point settings enabled under Settings / Network settings / Access Point.
 
 
+## Repeat if you have multiple sensors
+
+If you have multiple sensors, repeat the above steps for each one of them. Make sure that you keep the "MQTT prefix" individual for each one of them, otherwise, you will not be able to distinguish the data from the different sensors later.
+
+
 ## What's next?
 
-[to be written]
+In the next step, you'll be collecting the data provided by the sensor(s) in Node-RED and store them in InfluxDB.
 
 
 ## Links
