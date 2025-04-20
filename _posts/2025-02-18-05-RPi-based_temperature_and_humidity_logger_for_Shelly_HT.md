@@ -16,11 +16,17 @@ If you have multiple Shelly sensors, you will have to perform the steps below wi
 
 ## Integrating a new Shelly device into your Wi-Fi network
 
-Initially, the sensor does not have access to your Wi-Fi. Therefore, connecting to it for the first time is a bit complicated. Once it is connected to your Wi-Fi, it will be simpler. 
+Initially, the sensor does not have access to your Wi-Fi. Therefore, connecting to it for the first time requires some extra effort. Once it is connected to your Wi-Fi, it will be simpler. 
 
 Open your sensor using an appropriate tool. Insert batteries and check the integrated display. It should change and show the current temperature. Note that it might show a higher temperature as long as you are in the process of setting it up. This is normal and it will later show the correct temperature once it is in normal operation.
 
+<img src="/docs/assets/img/ht_logger/20250420_172733258_edited.jpg" alt="Opening of a Shelly Humidity and Temperature Wi-Fi sensor" width="400"/>
+
 Next, press the small button on the back of the sensor. It is located next to the USB-C connector. This activates the sensor's own Wi-Fi network. The front display should change to "Set" and "AP" (for "access point"). The sensor now provides a Wi-Fi access point. For the first steps of the setup, you'll have to connect to it. I normally do this using my mobile phone, but a PC or tablet will also work. Go to the settings of the mobile phone and select the Wi-Fi network called "ShellyHTG3-0123456789ABCDEF", where 0123456789ABCDEF is your sensor's individual 12 digit identifier (aka MAC address). Your phone might ask you for confirmation because this Wi-Fi does not provide internet access. This is ok and you can confirm.
+
+<img src="/docs/assets/img/ht_logger/20250420_180343474_cropped.jpg" alt="Pressing the button" width="400"/>
+
+<img src="/docs/assets/img/ht_logger/20250420_173648464_cropped.jpg" alt="Shelly in setup mode" width="400"/>
 
 When you are connected to this Wi-Fi network, open a browser on your phone and enter `192.168.33.1` in the address field. This should take you to the web interface of your Shelly sensor.
 
