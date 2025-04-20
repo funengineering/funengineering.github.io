@@ -56,9 +56,13 @@ This should allow your Shelly sensor to connect to your Wi-Fi network. If it is 
 
 From now on, you should be able to access the sensor's web interface from any computer in your local network. Just make sure that the sensor is in the setup mode (press its button if it isn't). Then, enter the sensor's IP address in the address bar of a browser on your computer. Accessing the sensor's web interface from a computer is more convenient, therefore I prefer it over the access from a mobile phone. You will not need the connection from the mobile phone to your Shelly sensor anymore.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20184829_edited.png" alt="Web interface as seen in a browser from a computer" width="400"/>
+
 [to be continued here...]
 
-### 
+### Checking for firmware update
+
+
 
 [to be written]
 
