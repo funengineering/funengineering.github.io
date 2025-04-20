@@ -58,10 +58,20 @@ From now on, you should be able to access the sensor's web interface from any co
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20184829_edited.png" alt="Web interface as seen in a browser from a computer" width="400"/>
 
-[to be continued here...]
 
 ### Checking for firmware update
 
+Once your Shelly sensor is connected to your Wi-Fi network, you should check if it has the latest firmware. Here is how to do this.
+
+Make sure that your sensor is in setup mode: It should show "Set" on its front display. If it is not, press its button next to the USB-C connector.
+
+Access the sensor's web interface from a browser on your computer. Then, click on "Settings" and select "Firmware" in the "Device settings" section.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20184934_edited.png" alt="Navigating to Settings/Device Settings/Firmware" width="400"/>
+
+If there are any firmware updates available, you should be able to install it from there. This will take some time and you will have to reconnect to the device afterwards. The Wi-Fi settings should be preserved, so you should be able to reconnect from your computer. I recommend to use only the stable version of the firmware and not the beta version of the next revision. In the screenshot below, you can see what it looks like if the latest available stable version (1.5.1 at the time) is already installed.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20185103_edited.png" alt="Latest stable firmware installed" width="400"/>
 
 
 [to be written]
