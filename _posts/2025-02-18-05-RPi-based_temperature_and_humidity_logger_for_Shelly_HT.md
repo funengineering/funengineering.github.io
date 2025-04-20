@@ -74,14 +74,46 @@ If there are any firmware updates available, you should be able to install it fr
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20185103_edited.png" alt="Latest stable firmware installed" width="400"/>
 
 
-[to be written]
+## Adjusting the sensor's settings
 
-[Firmware update once it is in the network]
+Finally, you can proceed to the main step of this part of the tutorial: adjusting the settings for the sensor to transmit its measured data to your RPi.
+
+On the sensor's web interface, go to Settings / Connectivity settings / MQTT. First, enable MQTT by checking "Enable". The connection type "No TLS" can remain as it is.
+
+The MQTT prefix defines the topic it uses to publish its data (i. e. messages). In my case, I use a topic name that includes information about the general type of sensor (i. e. that it is one of my Shelly H&T sensors), the location (e. g. "altbau/eg", which refers to the building and the floor) and the MAC address of the sensor. This means that I'm using "shellies/altbau/eg/ht8554" as an MQTT prefix. Depending on your application, a different prefix structure might be more suitable.
+
+Note: Since I have multiple sensors and I wanted to identify easily which sensor a particular message was coming from, I included the last four digits of each sensor's MAC address in its topic name. This might not be a wise choice, though. I had to replace a sensor (in fact, the one you are seeing here) and since the MAC address is unique for each sensor, the new one had a different MAC address. However, the MAC address of the original (replaced) sensor was already used in the software setup. Changing the topic name at a later stage is not that simple, thus I decided to keep it unchanged. This means that now the topic name (particularly the last four digits of the MAC address included in the topic name) don't match with the real MAC address of the replacement sensor anymore. It is not a problem with respect to the functionality of the system (it works), it is just a small inconsistency in the naming. You might want to refrain from using any part of the MAC address in the topic names for your sensors right from the beginning.
+
+In the "Server" field, enter the name or IP address of your RPi, as this is the device running Mosquitto. In my case, it is "192.168.178.28". In your local network, the RPi will most likely have a different IP address, so you have to adjust this setting accordingly.
+
+For the "Client ID", I'm using the same structure I'm using for the MQTT prefix. Again, if your application differs, you can adjust this to your needs.
+
+In the "Username" and "Password" fields, enter the user name and password you set during the installation of Mosquitto. In my case, the user name is "pi". For the password, enter the same one that you used during the installation.
+
+Enable "Generic status update over MQTT". This will cause the sensor to publish additional information about its status via MQTT.
+
+Finally, press the "Save settings" button.
+
+You will see that you are requested to reboot the sensor. When the sensor is still in setup mode, you can do this by clicking on "reboot" in the corresponding message. If the sensor is not in setup mode anymore, press its button again. Then, on the web interface of the sensor, go to Settings / Device settings / Reboot device and click on the Reboot button. Confirm by clicking the "Reboot" button in the message box that appears. You will see that the front display of the device will be reset during the reboot. When the reboot has finished, you'll see the temperature and humidity values again.
 
 
-## Adjusting the settings
+## Optional additional setting changes
 
-[to be written]
+### Changing the sensor's device name
+
+In my case, I changed the default device name ("H&T Gen3") to a name that does not contain special characters (no space, no ampersand) and includes the sensor's MAC address. The removal of the special characters might not be necessary, but in case of problems, it removes any doubt that it might be related to special characters. The device name can be changed under Settings / Device settings / Device name.
+
+### Disable Bluetooth
+
+If you don't need Bluetooth, you can disable it under Settings / Network settings / Bluetooth by removing the check mark in front of "Enable" and pressing the "Save settings" button. In my case, Bluetooth is disabled. The Bluetooth symbol at the top will change its color from blue to gray.
+
+### No cloud needed
+
+For the purpose of the setup described here, no cloud connection is needed. All data is stored and processed on your own devices. Any cloud setting on the sensor can remain deactivated (Settings / Connectivity settings / Cloud).
+
+### Access point
+
+It is wise to keep the access point setting enabled. If your sensor loses connection to your Wi-Fi network, you can only access its settings if you can connect to it via the access point it provides (as you did during the inital setup). Therefore, keep the access point settings enabled under Settings / Network settings / Access Point.
 
 
 ## What's next?
