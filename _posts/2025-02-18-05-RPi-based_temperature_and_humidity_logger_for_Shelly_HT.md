@@ -30,29 +30,29 @@ Next, press the small button on the back of the sensor. It is located next to th
 
 The sensor now provides a Wi-Fi access point. For the first steps of the setup, you'll have to connect to it. I normally do this using my mobile phone, but a PC or tablet will also work. Go to the settings of the mobile phone and select the Wi-Fi network called "ShellyHTG3-0123456789ABCDEF", where 0123456789ABCDEF is your sensor's individual 12 digit identifier (aka MAC address). Your phone might ask you for confirmation because this Wi-Fi does not provide internet access. This is ok and you can confirm.
 
-<img src="/docs/assets/img/ht_logger/Screenshot_20250417-230953_edited.png" alt="Shelly WLAN visible on mobile phone" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250417-230953_edited.png" alt="Shelly WLAN visible on mobile phone" width="250"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231016_edited.png" alt="Confirm WLAN without internet access" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231016_edited.png" alt="Confirm WLAN without internet access" width="250"/>
 
 When you are connected to this Wi-Fi network, open a browser on your phone and enter `192.168.33.1` in the address field. This should take you to the web interface of your Shelly sensor.
 
-<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231119_edited.png" alt="Home screen of Shelly web interface" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231119_edited.png" alt="Home screen of Shelly web interface" width="250"/>
 
 Note: The Shelly sensor is built to use as little power as possible, which allows it to operate on batteries for months. However, this also means that it will return to its power-saving state quite quickly. If this happens, your mobile phone will lose its connection to the sensor and the sensor's front display will go back to the normal temperature display. In this case, you have to press the button on the back of the sensor again. Then, connect again to the "ShellyHTG3-0123456789ABCDEF" Wi-Fi, confirm the missing internet connection and browse to 192.168.33.1 again. Then continue with the setup. Depending on how long it takes you to perform the setup, this might happen more than once. This might be somewhat annoying, but you will later love the long battery life if you operate your sensor without an external power source.
 
-<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231214_edited.png" alt="Connection lost because Shelly is not in setup mode anymore" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231214_edited.png" alt="Connection lost because Shelly is not in setup mode anymore" width="250"/>
 
 To connect your Shelly sensor to your Wi-Fi network, navigate to the Wi-Fi settings in the web interface of the Shelly sensor (on your mobile phone). Click on the hamburger menu (the three bars left of the "H&T Gen3" title) and select "Wi-Fi". Alternatively, you can also click on the Wi-Fi symbol at the top (the second symbol from the left). You should see in the Wi-Fi status that your sensor is not connected.
 
-<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231142_edited.png" alt="Shelly initially not connected" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231142_edited.png" alt="Shelly initially not connected" width="250"/>
 
 Enter the name (SSID) and the password of your Wi-Fi network in the corresponding fields of the "Wi-Fi 1 settings" and press "Save settings".
 
-<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231406_edited.png" alt="Entering Wi-Fi settings" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231406_edited.png" alt="Entering Wi-Fi settings" width="250"/>
 
 This should allow your Shelly sensor to connect to your Wi-Fi network. If it is successfully connected to your Wi-Fi, you should see your network's name in the Wi-Fi status. You can also see the IP address of the sensor there.
 
-<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231652_edited.png" alt="Connected to a Wi-Fi network" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot_20250417-231652_edited.png" alt="Connected to a Wi-Fi network" width="250"/>
 
 From now on, you should be able to access the sensor's web interface from any computer in your local network. Just make sure that the sensor is in the setup mode (press its button if it isn't). Then, enter the sensor's IP address in the address bar of a browser on your computer. Accessing the sensor's web interface from a computer is more convenient, therefore I prefer it over the access from a mobile phone. You will not need the connection from the mobile phone to your Shelly sensor anymore.
 
