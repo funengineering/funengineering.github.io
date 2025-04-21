@@ -13,6 +13,16 @@ When your browser shows the web interface of Node-RED, you should see an empty f
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20161506.png" alt="Initial view of Node-RED with empty flow" width="400"/>
 
+### Installation of the InfluxDB Node-RED package
+
+By default, Node-RED does not have nodes to access InfluxDB. Therefore, the first step is to add them by installing the InfluxDB Node-RED package.
+
+To do so, click on the hamburger menu icon (the three horizontal bars right of the deploy button) and select "Manage palette". The palette settings appear. Switch to the "Installation" tab at the top. In the "search modules" field, enter "node-red-contrib-influxdb". There should be only a few hits for this search. For the one that is called exactly "node-red-contrib-influxdb", click on the install button.
+
+A message will appear, allowing you to review the documentation of the module. Once you've done that, confirm the installation by clicking the "install" button. Some moving bars indicate the installation process. Then, you will receive a notification that new nodes were added to the palette. Close the settings.
+
+Back in the main view of Node-RED, scroll down in the palette on the left. At the bottom, in the "Storage" section, you should see three nodes called "influxdb in", "influxdb out" and "influxdb out".
+
 
 ## Title 2
 
@@ -31,5 +41,6 @@ Now that you have a growing collection of temperature and humidity data, you mig
 
 ## Links
 
-[Links to be added here.]
+- [IoT Made Easy with Node-RED and InfluxDB](https://www.influxdata.com/blog/iot-easy-node-red-influxdb/)
+- [Documentation of node-red-contrib-influxdb 0.7.0](https://flows.nodered.org/node/node-red-contrib-influxdb)
 
