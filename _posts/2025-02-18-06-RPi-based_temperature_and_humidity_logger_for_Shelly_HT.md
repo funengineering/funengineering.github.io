@@ -92,9 +92,13 @@ This node by itself is not yet useful. Therefore, we will continue adding more n
 
 ### Extracting the Centigrade temperature
 
-Next, you need a "Change" node to extract the temperature in degrees Centrigrade from the temperature data provided by the sensor. In the palette, scroll to the "Function" group and drag a "change" node to the right of the existing "Temp_EG" node. By default, it will appear as "set msg.payload" in the flow. Double-click the newly added node to show its settings.
+Next, you need a "Change" node to extract the temperature in degrees Centrigrade from the temperature data provided by the sensor. In the palette, scroll to the "Function" group and drag a "change" node to the right of the existing "Temp_EG" node. By default, it will appear as "set msg.payload" in the flow.
 
-Change the node's name to "get °C temperature". Change the rule to "Set" "msg.payload" to the value "msg.payload.tC".
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20225843.png" alt="Change node added to the flow" width="600"/>
+
+Double-click the newly added node to show its settings. Change the node's name to "get °C temperature". Change the rule to "Set" "msg.payload" to the value "msg.payload.tC".
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20230556.png" alt="Adjusted settings of the change node" width="600"/>
 
 Click on the "Done" button to return to the flow.
 
@@ -103,6 +107,13 @@ If you are interested in the Fahrenheit temperature, use "msg.payload.tF" instea
 Caution: All further steps in this tutorial assume that you are using degree Centigrade temperatures. Later on, you will add calculations, e. g. for the absolute humidity. This will only work correctly if you are using the Celsius temperature scale.
 
 Connect the output of the "Temp_EG" node to the input of the "get °C temperature" node by dragging a connection with your mouse. Click and hold the output of "Temp_EG", drag the mouse to the input of "get °C temperature" and release the mouse button.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20230833.png" alt="Configured change node connected to mqtt in node" width="600"/>
+
+
+### Writing the Centigrade temperature to InfluxDB
+
+
 
 [to be written]
 
