@@ -3,7 +3,7 @@
 Now the Shelly H&T sensors transmit their data to the MQTT broker running on your Raspberry Pi. You will now create a "flow" in Node-RED that takes this data and passes it on to InfluxDB, where it is stored. With InfluxDB, it is also possible to visualize the data, but that's not the topic of this part of the tutorial. The goal of this part is only to feed the collected into InfluxDB for permanent storage.
 
 
-## Creating a flow for one sensor
+## Preparations
 
 ### Web interface of Node-RED
 
@@ -36,7 +36,36 @@ Back in the main view of Node-RED, scroll down in the palette on the left. At th
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163438_cropped.png" alt="InfluxDB nodes now available at bottom of palette" width="600"/>
 
 
-## Title 2
+## Creating a flow for one sensor
+
+### Node for fetching the temperature data from the MQTT broker
+
+First, you need a node that receives data every time the sensor publishes a new set of values. In the palette, scroll down to the "Network" section and drag an "mqtt in" node into your blank flow. Double-click on the mqtt node in your flow to open its properties.
+
+As no server is defined so far, click on the plus sign on the "Server" line to add the details of the MQTT server to use. The properties view opens.
+
+In the "Name" field, you can freely choose a server name. In my case, I used "Mosquitto on 192.168.178.28". You may want to name it similarly.
+
+In the "Server" field, enter the IP address of your RPi. In my case, it is 192.168.178.28. The predefined port number 1883 is fine, leave it as it is. You can also leave the check mark for "Connect automatically". The TLS option can remain unchecked as we are not using any encryption for the data transfer from the MQTT broker to Node-RED.
+
+All other options can remain at their default values (Protocol: MQTT V3.1.1, Client-ID: empty, Keep-Alive: 60, Session: clean session checked).
+
+Switch to the Security tab. Enter the user name and password you defined for Mosquitto in [part 2](/2025/02/18/02-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html) of this tutorial (section "Mosquitto configuration).
+
+In the "Messages" tab, there is no need to change the default settings. Click the "Add" button at the top right to activate the server settings.
+
+This will take you back to the properties of the mqtt node. Now, the "Server" field shows the server name you entered before.
+
+For "Action", leave the default "Subscribe to single topic". In the "Topic" field, repeat what you entered as "MQTT prefix"  during the sensor configuration (part 5 of this tutorial, section "Adjusting the sensor’s settings"). In the same field, just behind of what you just entered, add "/status/temperature:0" (no spaces). In my case, the "Topic" field contains "shellies/altbau/eg/ht8554/status/temperature:0".
+
+Leave QoS (quality of service) at the default value of 2.
+
+Change "Output" to "a parsed JSON object".
+
+Finally, choose a meaningful name for the node. In my case, it is named "Temp_EG", referring to the fact that it provides the temperature value ("Temp") of the sensor on the ground floor ("EG").
+
+Click on "Done" to activate the settings. This will take you back to the flow.
+
 
 [to be written]
 
