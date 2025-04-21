@@ -85,6 +85,8 @@ The node you just created is not yet active. It will only become active once you
 
 Now, press the deploy button. You'll see a message saying that the changes were successfully deployed. There is now no more blue dot at the top right of the node and there is a message below the node saying something like "establishing connection".
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20224517.png" alt="mqtt in node added and configured" width="600"/>
+
 This node by itself is not yet useful. Therefore, we will continue adding more nodes to process the data.
 
 
