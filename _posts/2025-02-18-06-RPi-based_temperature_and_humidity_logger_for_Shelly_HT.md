@@ -42,6 +42,10 @@ Back in the main view of Node-RED, scroll down in the palette on the left. At th
 
 First, you need a node that receives data every time the sensor publishes a new set of values. In the palette, scroll down to the "Network" section and drag an "mqtt in" node into your blank flow. Double-click on the mqtt node in your flow to open its properties.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20214208.png" alt="Adding an mqtt in node to an empty flow" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20214322.png" alt="Default properties of the mqtt node" width="600"/>
+
 As no server is defined so far, click on the plus sign on the "Server" line to add the details of the MQTT server to use. The properties view opens.
 
 In the "Name" field, you can freely choose a server name. In my case, I used "Mosquitto on 192.168.178.28". You may want to name it similarly.
@@ -50,9 +54,15 @@ In the "Server" field, enter the IP address of your RPi. In my case, it is 192.1
 
 All other options can remain at their default values (Protocol: MQTT V3.1.1, Client-ID: empty, Keep-Alive: 60, Session: clean session checked).
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20215458.png" alt="Server settings: connection tab" width="600"/>
+
 Switch to the Security tab. Enter the user name and password you defined for Mosquitto in [part 2](/2025/02/18/02-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html) of this tutorial (section "Mosquitto configuration).
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20215514.png" alt="Server settings: security tab" width="600"/>
+
 In the "Messages" tab, there is no need to change the default settings. Click the "Add" button at the top right to activate the server settings.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20215946.png" alt="Server settings: messages tab" width="600"/>
 
 This will take you back to the properties of the mqtt node. Now, the "Server" field shows the server name you entered before.
 
@@ -64,7 +74,11 @@ Change "Output" to "a parsed JSON object".
 
 Finally, choose a meaningful name for the node. In my case, it is named "Temp_EG", referring to the fact that it provides the temperature value ("Temp") of the sensor on the ground floor ("EG").
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20221638.png" alt="Correct settings of mqtt in node" width="600"/>
+
 Click on "Done" to activate the settings. This will take you back to the flow.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20221726.png" alt="mqtt in node added and configured" width="600"/>
 
 
 [to be written]
