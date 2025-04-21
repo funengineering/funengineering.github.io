@@ -13,6 +13,7 @@ When your browser shows the web interface of Node-RED, you should see an empty f
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20161506.png" alt="Initial view of Node-RED with empty flow" width="400"/>
 
+
 ### Installation of the InfluxDB Node-RED package
 
 By default, Node-RED does not have nodes to access InfluxDB. The first step is thus to add them by installing the InfluxDB Node-RED package.
@@ -79,6 +80,15 @@ Finally, choose a meaningful name for the node. In my case, it is named "Temp_EG
 Click on "Done" to activate the settings. This will take you back to the flow.
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20221726.png" alt="mqtt in node added and configured" width="600"/>
+
+The node you just created is not yet active. It will only become active once you press the "Deploy" button at the top right of the Node-RED web interface. This allows you to perform changes to a flow while the unchanged version still keeps on working in the background. Only when the deploy button is pressed, all changes to the flow become active.
+
+Now, press the deploy button. You'll see a message saying that the changes were successfully deployed. There is now no more blue dot at the top right of the node and there is a message below the node saying something like "establishing connection".
+
+This node by itself is not yet useful. Therefore, we will continue adding more nodes to process the data.
+
+
+### Node for fetching the relative humidity data from the MQTT broker
 
 
 [to be written]
