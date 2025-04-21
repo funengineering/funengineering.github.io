@@ -54,7 +54,7 @@ In the "Server" field, enter the IP address of your RPi. In my case, it is 192.1
 
 All other options can remain at their default values (Protocol: MQTT V3.1.1, Client-ID: empty, Keep-Alive: 60, Session: clean session checked).
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20215458.png" alt="Server settings: connection tab" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20215458.png" alt="Server settings: connection tab" width="800"/>
 
 Switch to the Security tab. Enter the user name and password you defined for Mosquitto in [part 2](/2025/02/18/02-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html) of this tutorial (section "Mosquitto configuration).
 
@@ -74,7 +74,7 @@ Change "Output" to "a parsed JSON object".
 
 Finally, choose a meaningful name for the node. In my case, it is named "Temp_EG", referring to the fact that it provides the temperature value ("Temp") of the sensor on the ground floor ("EG").
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20221638.png" alt="Correct settings of mqtt in node" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20221638.png" alt="Correct settings of mqtt in node" width="800"/>
 
 Click on "Done" to activate the settings. This will take you back to the flow.
 
