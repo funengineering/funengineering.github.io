@@ -21,19 +21,19 @@ To do so, click on the hamburger menu icon (the three horizontal bars right of t
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20162548_cropped.png" alt="Manage palette menu" width="200"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20162726_edited.png" alt="Search for node-red-contrib-influxdb" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20162726_edited.png" alt="Search for node-red-contrib-influxdb" width="600"/>
 
 A message will appear, allowing you to review the documentation of the module. Once you've done that, confirm the installation by clicking the "install" button. Some moving bars indicate the installation process. Then, you will receive a notification that new nodes were added to the palette. Close the settings.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163051_cropped.png" alt="Confirm installation" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163051_cropped.png" alt="Confirm installation" width="600"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163340_cropped.png" alt="Installation in progress" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163340_cropped.png" alt="Installation in progress" width="600"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163347_cropped.png" alt="Installation complete" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163347_cropped.png" alt="Installation complete" width="600"/>
 
 Back in the main view of Node-RED, scroll down in the palette on the left. At the bottom, in the "Storage" section, you should see three nodes called "influxdb in", "influxdb out" and "influxdb out".
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163438_cropped.png" alt="InfluxDB nodes now available at bottom of palette" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163438_cropped.png" alt="InfluxDB nodes now available at bottom of palette" width="600"/>
 
 
 ## Title 2
