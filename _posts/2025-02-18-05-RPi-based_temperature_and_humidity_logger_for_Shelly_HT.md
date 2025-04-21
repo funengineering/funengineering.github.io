@@ -117,6 +117,8 @@ If you don't need Bluetooth, you can disable it under Settings / Network setting
 
 For the purpose of the setup described here, no cloud connection is needed. All data is stored and processed on your own devices. Any cloud setting on the sensor can remain deactivated (Settings / Connectivity settings / Cloud).
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20152757_edited.png" alt="Cloud settings disabled" width="400"/>
+
 ### Access point
 
 It is wise to keep the access point setting enabled. If your sensor loses connection to your Wi-Fi network, you can only access its settings if you can connect to it via the access point it provides (as you did during the inital setup). Therefore, keep the access point settings enabled under Settings / Network settings / Access Point.
