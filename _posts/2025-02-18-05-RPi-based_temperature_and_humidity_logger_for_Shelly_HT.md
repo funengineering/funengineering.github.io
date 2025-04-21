@@ -138,5 +138,5 @@ In the next step, you'll be collecting the data provided by the sensor(s) in Nod
 
 ## Links
 
-[to be added]
+No links for this part of the tutorial.
 
