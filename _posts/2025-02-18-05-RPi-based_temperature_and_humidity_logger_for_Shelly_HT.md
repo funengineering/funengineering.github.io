@@ -67,11 +67,11 @@ Make sure that your sensor is in setup mode: It should show "Set" on its front d
 
 Access the sensor's web interface from a browser on your computer. Then, click on "Settings" and select "Firmware" in the "Device settings" section.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20184934_edited.png" alt="Navigating to Settings/Device Settings/Firmware" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20184934_edited.png" alt="Navigating to Settings/Device Settings/Firmware" width="600"/>
 
 If there are any firmware updates available, you should be able to install it from there. This will take some time and you will have to reconnect to the device afterwards. The Wi-Fi settings should be preserved, so you should be able to reconnect from your computer. I recommend to use only the stable version of the firmware and not the beta version of the next revision. In the screenshot below, you can see what it looks like if the latest available stable version (1.5.1 at the time) is already installed.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20185103_edited.png" alt="Latest stable firmware installed" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20185103_edited.png" alt="Latest stable firmware installed" width="600"/>
 
 
 ## Adjusting the sensor's settings
@@ -94,7 +94,7 @@ Finally, press the "Save settings" button.
 
 You will see that you are requested to reboot the sensor. When the sensor is still in setup mode, you can do this by clicking on "reboot" in the corresponding message. If the sensor is not in setup mode anymore, press its button again. Then, on the web interface of the sensor, go to Settings / Device settings / Reboot device and click on the Reboot button. Confirm by clicking the "Reboot" button in the message box that appears. You will see that the front display of the device will be reset during the reboot. When the reboot has finished, you'll see the temperature and humidity values again.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20225648_edited.png" alt="MQTT settings adjusted" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20225648_edited.png" alt="MQTT settings adjusted" width="600"/>
 
 Note: Since I have multiple sensors and I wanted to identify easily which sensor a particular message was coming from, I included the last four digits of each sensor's MAC address in its topic name. This might not be a wise choice, though. I had to replace a sensor (in fact, the one you are seeing here) and since the MAC address is unique for each sensor, the new one had a different MAC address. However, the MAC address of the original (replaced) sensor was already used in the software setup. Changing the topic name at a later stage is not that simple, thus I decided to keep it unchanged. This means that now the topic name (particularly the last four digits of the MAC address included in the topic name) don't match with the real MAC address of the replacement sensor anymore. It is not a problem with respect to the functionality of the system (it works), it is just a small inconsistency in the naming. You might want to refrain from using any part of the MAC address in the topic names for your sensors right from the beginning.
 
@@ -105,25 +105,25 @@ Note: Since I have multiple sensors and I wanted to identify easily which sensor
 
 In my case, I changed the default device name ("H&T Gen3") to a name that does not contain special characters (no space, no ampersand) and includes the sensor's MAC address. The removal of the special characters might not be necessary, but in case of problems, it removes any doubt that it might be related to special characters. The device name can be changed under Settings / Device settings / Device name.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20221248_edited.png" alt="Device name changed" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20221248_edited.png" alt="Device name changed" width="600"/>
 
 ### Disable Bluetooth
 
 If you don't need Bluetooth, you can disable it under Settings / Network settings / Bluetooth by removing the check mark in front of "Enable" and pressing the "Save settings" button. In my case, Bluetooth is disabled. The Bluetooth symbol at the top will change its color from blue to gray.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20221648_edited.png" alt="Bluetooth disabled" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20221648_edited.png" alt="Bluetooth disabled" width="600"/>
 
 ### No cloud needed
 
 For the purpose of the setup described here, no cloud connection is needed. All data is stored and processed on your own devices. Any cloud setting on the sensor can remain deactivated (Settings / Connectivity settings / Cloud).
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20152757_edited.png" alt="Cloud settings disabled" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20152757_edited.png" alt="Cloud settings disabled" width="600"/>
 
 ### Access point
 
 It is wise to keep the access point setting enabled. If your sensor loses connection to your Wi-Fi network, you can only access its settings if you can connect to it via the access point it provides (as you did during the inital setup). Therefore, keep the access point settings enabled under Settings / Network settings / Access Point.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20222625_edited.png" alt="Bluetooth disabled" width="400"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-20%20222625_edited.png" alt="Bluetooth disabled" width="600"/>
 
 
 ## Repeat if you have multiple sensors
