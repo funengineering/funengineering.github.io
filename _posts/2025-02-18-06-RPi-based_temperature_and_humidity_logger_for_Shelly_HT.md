@@ -37,7 +37,7 @@ Back in the main view of Node-RED, scroll down in the palette on the left. At th
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20163438_cropped.png" alt="InfluxDB nodes now available at bottom of palette" width="600"/>
 
 
-## Creating a flow for one sensor
+## Creating a flow for the temperature data of one sensor
 
 ### Node for fetching the temperature data from the MQTT broker
 
@@ -90,8 +90,19 @@ Now, press the deploy button. You'll see a message saying that the changes were 
 This node by itself is not yet useful. Therefore, we will continue adding more nodes to process the data.
 
 
-### Node for fetching the relative humidity data from the MQTT broker
+### Extracting the Centigrade temperature
 
+Next, you need a "Change" node to extract the temperature in degrees Centrigrade from the temperature data provided by the sensor. In the palette, scroll to the "Function" group and drag a "change" node to the right of the existing "Temp_EG" node. By default, it will appear as "set msg.payload" in the flow. Double-click the newly added node to show its settings.
+
+Change the node's name to "get °C temperature". Change the rule to "Set" "msg.payload" to the value "msg.payload.tC".
+
+Click on the "Done" button to return to the flow.
+
+If you are interested in the Fahrenheit temperature, use "msg.payload.tF" instead of "msg.payload.tC" and change the name of the node accordingly.
+
+Caution: All further steps in this tutorial assume that you are using degree Centigrade temperatures. Later on, you will add calculations, e. g. for the absolute humidity. This will only work correctly if you are using the Celsius temperature scale.
+
+Connect the output of the "Temp_EG" node to the input of the "get °C temperature" node by dragging a connection with your mouse. Click and hold the output of "Temp_EG", drag the mouse to the input of "get °C temperature" and release the mouse button.
 
 [to be written]
 
