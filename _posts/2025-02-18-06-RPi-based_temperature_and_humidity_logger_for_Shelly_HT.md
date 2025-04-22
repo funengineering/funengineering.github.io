@@ -111,11 +111,33 @@ Connect the output of the "Temp_EG" node to the input of the "get °C temperatur
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20230833.png" alt="Configured change node connected to mqtt in node" width="600"/>
 
 
-### Writing the Centigrade temperature to InfluxDB
+### Writing the temperature to InfluxDB
+
+Your goal is to store the temperature and humidity data permanently in InfluxDB. You'll thus add an "influxdb out" node to your flow. You can find this node at the bottom of the palette in the "storage" section. Drag an "influxdb out" node into your flow and double click on it to show its properties.
+
+You can leave the Name field empty, the node will then be labelled with its key properties.
+
+There is no InfluxDB server defined so far in Node-RED. Add one by clicking on the plus button, which will take you to the properties page for the server. Use "InfluxDB on 192.168.278.28" in the Name field. Switch to 2.0 in the Version field. In the URL field, enter "http://192.168.178.28:8086". (Node-RED and InfluxDB are running on the same RPi, therefore the default "http://localhost:8086" should also work, but I have not tried it.)
+
+In the Token field, enter the "operator API token" you have obtained in [part 3 of this tutorial](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html) (section "Setting up InfluxDB").
+
+Click on the "Add" button to establish this InfluxDB server in Node-RED. This will take you back to the properties of the "influxdb out" node. Make sure the Server field contains the newly created "InfluxDB on 192.168.178.28".
+
+Change the "Organization" field to "AS26". Change the "Bucket" field to "MQTT_Live". (You created this organization and this bucket in [part 3 of this tutorial](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html), section "Setting up InfluxDB".)
+
+Set the "Measurement" field to "tC_eg" (temperature in degrees Centigrade (tC) on the ground floor (eg)). The data will be accessible by this identifier in InfluxDB.
+
+Finally, set the "Time Precision" field to seconds. The Shelly sensors provide their data rather on a time scale of hours, therefore it is sufficient to set the accuracy of the time stamp to seconds. Implement your changes by pressing the "Done" button.
+
+Finally, connect the "influxdb out" node to the "get °C temperature" by adding a wire between them. Then activate the flow by pressing the "Deploy" button. You should see a message confirming the successful deployment.
+
+
+### Wait
+
+Now, your RPi is collecting temperature data from the Shelly sensor and storing it in InfluxDB. Eventually, you should see the collected data in InfluxDB. However, as the sensor publishes data rather infrequently, you will have to wait some time until you see the result in InfluxDB. Wait approximately one day at this point.
 
 
 
-[to be written]
 
 
 ## Save the flow
