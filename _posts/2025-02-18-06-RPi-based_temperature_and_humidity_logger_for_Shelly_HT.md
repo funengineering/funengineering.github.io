@@ -98,7 +98,7 @@ Next, you need a "Change" node to extract the temperature (in degrees Centrigrad
 
 Double-click the newly added node to show its settings. Change the node's name to "get °C temperature". Change the rule to "Set" "msg.payload" to the value "msg.payload.tC".
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20230556.png" alt="Adjusted settings of the change node" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20230556.png" alt="Adjusted settings of the change node" width="800"/>
 
 Click on the "Done" button to return to the flow.
 
@@ -123,7 +123,7 @@ There is no InfluxDB server defined so far in Node-RED. Add one by clicking on t
 
 In the Token field, enter the "operator API token" you have obtained in [part 3 of this tutorial](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html) (section "Setting up InfluxDB"). Click on the "Add" button to establish this InfluxDB server in Node-RED.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-22%20221325.png" alt="InfluxDB server settings" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-22%20221325.png" alt="InfluxDB server settings" width="800"/>
 
 This will take you back to the properties of the "influxdb out" node. Make sure the Server field contains the newly created "InfluxDB on 192.168.178.28".
 
@@ -133,7 +133,7 @@ Set the "Measurement" field to "tC_eg" (temperature in degrees Centigrade (tC) o
 
 Set the "Time Precision" field to seconds. The Shelly sensors provide their data rather on a time scale of hours, therefore it is sufficient to set the accuracy of the time stamp to seconds. Implement your changes by pressing the "Done" button.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-22%20222217.png" alt="Settings of the influxdb out node" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-22%20222217.png" alt="Settings of the influxdb out node" width="800"/>
 
 Finally, connect the "influxdb out" node to the "get °C temperature" by adding a wire between them. Then activate the flow by pressing the "Deploy" button. You should see a message confirming the successful deployment. The blue circle at the top right of the node should have disappeared with the deployment.
 
