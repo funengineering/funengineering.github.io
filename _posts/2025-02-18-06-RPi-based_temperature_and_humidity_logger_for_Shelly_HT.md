@@ -83,9 +83,9 @@ Click on "Done" to activate the settings. This will take you back to the flow.
 
 The node you just created is not yet active. It will only become active once you press the "Deploy" button at the top right of the Node-RED web interface. This allows you to perform changes to a flow while the unchanged version still keeps on working in the background. Only when the deploy button is pressed, all changes to the flow become active.
 
-Now, press the deploy button. You'll see a message saying that the changes were successfully deployed. There is now no more blue dot at the top right of the node and there is a message below the node saying something like "establishing connection".
+Now, press the deploy button. You'll see a message saying that the changes were successfully deployed. There is now no more blue dot at the top right of the node. Below the node, there is a green marker and a message saying "connected".
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20224517.png" alt="mqtt in node added and configured" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-22%20212514.png" alt="mqtt in node added and configured" width="600"/>
 
 This node by itself is not yet useful. Therefore, we will continue adding more nodes to process the data.
 
