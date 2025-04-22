@@ -90,9 +90,9 @@ Now, press the deploy button. You'll see a message saying that the changes were 
 This node by itself is not yet useful. Therefore, we will continue adding more nodes to process the data.
 
 
-### Extracting the Centigrade temperature
+### Extracting the temperature
 
-Next, you need a "Change" node to extract the temperature in degrees Centrigrade from the temperature data provided by the sensor. In the palette, scroll to the "Function" group and drag a "change" node to the right of the existing "Temp_EG" node. By default, it will appear as "set msg.payload" in the flow.
+Next, you need a "Change" node to extract the temperature (in degrees Centrigrade) from the temperature data provided by the sensor. In the palette, scroll to the "Function" group and drag a "change" node to the right of the existing "Temp_EG" node. By default, it will appear as "set msg.payload" in the flow.
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-21%20225843.png" alt="Change node added to the flow" width="600"/>
 
@@ -115,21 +115,29 @@ Connect the output of the "Temp_EG" node to the input of the "get °C temperatur
 
 Your goal is to store the temperature and humidity data permanently in InfluxDB. You'll thus add an "influxdb out" node to your flow. You can find this node at the bottom of the palette in the "storage" section. Drag an "influxdb out" node into your flow and double click on it to show its properties.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-22%20221228.png" alt="influxdb out node added to flow in Node-RED" width="600"/>
+
 You can leave the Name field empty, the node will then be labelled with its key properties.
 
 There is no InfluxDB server defined so far in Node-RED. Add one by clicking on the plus button, which will take you to the properties page for the server. Use "InfluxDB on 192.168.278.28" in the Name field. Switch to 2.0 in the Version field. In the URL field, enter "http://192.168.178.28:8086". (Node-RED and InfluxDB are running on the same RPi, therefore the default "http://localhost:8086" should also work, but I have not tried it.)
 
-In the Token field, enter the "operator API token" you have obtained in [part 3 of this tutorial](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html) (section "Setting up InfluxDB").
+In the Token field, enter the "operator API token" you have obtained in [part 3 of this tutorial](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html) (section "Setting up InfluxDB"). Click on the "Add" button to establish this InfluxDB server in Node-RED.
 
-Click on the "Add" button to establish this InfluxDB server in Node-RED. This will take you back to the properties of the "influxdb out" node. Make sure the Server field contains the newly created "InfluxDB on 192.168.178.28".
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-22%20221325.png" alt="InfluxDB server settings" width="600"/>
+
+This will take you back to the properties of the "influxdb out" node. Make sure the Server field contains the newly created "InfluxDB on 192.168.178.28".
 
 Change the "Organization" field to "AS26". Change the "Bucket" field to "MQTT_Live". (You created this organization and this bucket in [part 3 of this tutorial](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html), section "Setting up InfluxDB".)
 
 Set the "Measurement" field to "tC_eg" (temperature in degrees Centigrade (tC) on the ground floor (eg)). The data will be accessible by this identifier in InfluxDB.
 
-Finally, set the "Time Precision" field to seconds. The Shelly sensors provide their data rather on a time scale of hours, therefore it is sufficient to set the accuracy of the time stamp to seconds. Implement your changes by pressing the "Done" button.
+Set the "Time Precision" field to seconds. The Shelly sensors provide their data rather on a time scale of hours, therefore it is sufficient to set the accuracy of the time stamp to seconds. Implement your changes by pressing the "Done" button.
 
-Finally, connect the "influxdb out" node to the "get °C temperature" by adding a wire between them. Then activate the flow by pressing the "Deploy" button. You should see a message confirming the successful deployment.
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-22%20222217.png" alt="Settings of the influxdb out node" width="600"/>
+
+Finally, connect the "influxdb out" node to the "get °C temperature" by adding a wire between them. Then activate the flow by pressing the "Deploy" button. You should see a message confirming the successful deployment. The blue circle at the top right of the node should have disappeared with the deployment.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-22%20222348.png" alt="influxdb out node added to Node-RED flow" width="600"/>
 
 
 ### Wait
