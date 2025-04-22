@@ -70,7 +70,7 @@ Continue by pressing the "get started" button. Fill in the fields for the initia
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20230933.png" alt="Setup Initial User" width="400"/>
 
 
-The "You are ready to go!" page should appear. It shows you the "operator API token" for the user "pi". Save it in a safe place.
+The "You are ready to go!" page should appear. It shows you the **"operator API token" for the user "pi"**. Save it in a safe place. **You will need this piece of information in [part 6 of this tutorial](/2025/02/18/06-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html).**
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-03-13%20232652_edited.png" alt="You are ready to go" width="400"/>
 
