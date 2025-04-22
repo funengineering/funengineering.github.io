@@ -80,7 +80,7 @@ Finally, you can proceed to the main step of this part of the tutorial: adjustin
 
 On the sensor's web interface, go to Settings / Connectivity settings / MQTT. First, enable MQTT by checking "Enable". The connection type "No TLS" can remain as it is.
 
-The MQTT prefix defines the topic it uses to publish its data (i. e. messages). In my case, I use a topic name that includes information about the general type of sensor (i. e. that it is one of my Shelly H&T sensors), the location (e. g. "altbau/eg", which refers to the building and the floor) and the MAC address of the sensor. This means that I'm using "shellies/altbau/eg/ht8554" as an MQTT prefix. Depending on your application, a different prefix structure might be more suitable.
+The MQTT prefix defines the topic it uses to publish its data (i. e. messages). In my case, I use a topic name that includes information about the general type of sensor (i. e. that it is one of my Shelly H&T sensors), the location (e. g. "altbau/eg", which refers to the building and the floor) and the MAC address of the sensor. This means that I'm using **"shellies/altbau/eg/ht8554"** as an **MQTT prefix**. I recommend that you follow the same naming structure. It will make it easier to follow the tutorial. **You will need this MQTT prefix again in [part 6 of the tutorial](/2025/02/18/06-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html).**
 
 In the "Server" field, enter the name or IP address of your RPi, as this is the device running Mosquitto. In my case, it is "192.168.178.28". In your local network, the RPi will most likely have a different IP address, so you have to adjust this setting accordingly.
 
