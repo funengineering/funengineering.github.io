@@ -48,7 +48,7 @@ To login to your RPi using SSH (secure shell), it might be helpful to assign a f
 
 If you don't know your RPi's MAC address, you can find it using a network scanner. Download a network scanner app for your mobile phone (e. g. Fing or Net Analyzer), make sure the phone is connected to your home network and perform a network scan. Your RPi should show up in the list of network devices. In the details of this device, you should see its MAC address. The MAC address is typically shown as a hexadecimal number having the format NN:NN:NN:NN:NN:NN (total of 12 hex digits (0-9, A-F), separated in groups of two digits by colons). 
 
-Edit the settings of your network's router such that it assigns the IP address you define to the device having the MAC address you found (which is your RPi). Below, I will be assuming that the IP address of the RPi is 192.168.178.28. Depending on your network's settings, you might have to use a different address, e. g. 192.168.xxx.xxx or 10.xxx.xxx.xxx. Be sure not to choose an IP address that is already in use for another device in your network.
+Edit the settings of your network's router such that it assigns the IP address you define to the device having the MAC address you found (which is your RPi). **Below, I will be assuming that the IP address of the RPi is 192.168.178.28.** Depending on your network's settings, you might have to use a different address, e. g. 192.168.xxx.xxx or 10.xxx.xxx.xxx. **You will need the IP address of *your* RPi at multiple places throughout this tutorial. Make sure you know it.**
 
 
 ## First login
