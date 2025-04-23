@@ -144,7 +144,7 @@ Finally, connect the "influxdb out" node to the "get °C temperature" by adding 
 
 Now, your RPi is collecting temperature data from the Shelly sensor and storing it in InfluxDB. Eventually, you should see the collected data in InfluxDB. However, as the sensor publishes data rather infrequently, you will have to wait some time until you see the result in InfluxDB. Wait approximately one day at this point.
 
-I'm not aware of a way to force the Shelly sensors to publish data.
+If you want to force the Shelly sensor to publish a new set of data, you'll have to change its temperature by more than a certain threshold. The value of this threshold is defined in the sensor's settings. I'm not aware of any other way to force the Shelly sensors to publish a new set of data.
 
 
 ## Save the flow
