@@ -23,8 +23,9 @@ The main steps are:
 3. [Part 3: Installation of InfluxDB on the RPi](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
 4. [Part 4: Installation of Node-RED on the RPi](/2025/02/18/04-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
 5. [Part 5: Configuration of the Shelly devices](/2025/02/18/05-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
-6. Part 6: Using Node-RED to store temperature and humidity values in InfluxDB
-7. Part 7: Creating a dashboard that shows the data graphically
+6. [Part 6: Using Node-RED to collect temperature data](/2025/02/18/06-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
+7. Part 7: Collecing humidity data (and more)
+8. Part 8: Creating a dashboard that shows the data graphically
 
 Read the parts, follow the instructions and enjoy the result!
 
