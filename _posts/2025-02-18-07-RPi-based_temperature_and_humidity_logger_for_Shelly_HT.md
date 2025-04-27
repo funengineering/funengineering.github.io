@@ -79,12 +79,14 @@ Based on the knowledge of the temperature and the humidity, it is possible to ca
 
 Note: As I don't have too much experience with Node-RED (I only started using it with this project), the solution shown here might not be the most simple one. After all, it works, which was the most important goal for me.
 
-If you are not interested in this data, you can simply skip this step.
+If you are not interested in this data, you can simply skip this step of the tutorial.
 
 
 ### Making temperature and relative humidity available for subsequent calculations
 
 First, drag a new "function" node from the palette to your flow. Place it below the "InfluxDB on ... tC_eg" node. Double-click on the "function 1" node to edit its properties. Change the "Name" field from "function 1" to "store tC_eg".
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20165223.png" alt="Function node added" width="600"/>
 
 In the "Function" tab of the properties, add the following code.
 ```
@@ -94,6 +96,8 @@ return msg;
 ```
 This allows to access "tC_eg" later in other functions. For everything else, the default values are fine. Click on the "Done" button.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20165638.png" alt="Function tC_eg" width="600"/>
+
 Similarly, add another "function" node for the relative humidity. Change the node's name to "store rh_eg" and add the code below in the "Function" tab.
 ```
 var rh_eg = null;
@@ -102,14 +106,26 @@ return msg;
 ```
 Finish editing by clicking the "Done" button.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20170218.png" alt="Another function node added" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20170451.png" alt="Function rh_eg" width="600"/>
+
 Connect the newly added "store ..." nodes to the corresponding "get ..." nodes by adding two wires.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20171336.png" alt="Functions tC_eg and rh_eg added" width="600"/>
 
 
 ### Adding a "join" node
 
 Next, you add a "join" node, which can be found in the "Sequence" section of the palette. Drag it from the palette to the right of the "store tC_eg" node. Connect the output of the "store tC_eg" node to the input of the "join" node. Then, connect the output of the "store rh_eg" node to the "join" node, too.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20171400.png" alt="Join node added" width="600"/>
+
 Double-click the "join" node to edit its properties. Set the node name to "join tC and rh". Change the "Mode" to "Manual". Change the details of the manual mode to "Join each msg.payload and create an array". Check "Use existing msg.parts property". Under "Send the message", set "after a number of message parts" to "2". Confirm these settings by clicking the "Done" button.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20172118.png" alt="Editing properties of join node" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20172221.png" alt="Join node edited and connected" width="600"/>
 
 
 ### Calculating the absolute humidity
@@ -127,9 +143,22 @@ return msg;
 ```
 Confirm the changes by clicking on the "Done" button.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20172554.png" alt="Function node added" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20202927.png" alt="Calculation of absolute humidity added" width="600"/>
+
 Connect the newly added function node to the join node by adding the corresponding wire between the two.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20203100.png" alt="Connection added" width="600"/>
+
+
+### Storing the absolute humidity in InfluxDB
+
 To store this data in InfluxDB, copy-paste and edit one of the "InfluxDB on..." nodes. Edit its properties and set the "Measurement" field to "ah_eg". Click on the "Done" button and add the missing connection to the "rh_T_to_ah" node.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20203452.png" alt="Storing the ah_eg data in InfluxDB" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20203559.png" alt="InfluxDB out node connected" width="600"/>
 
 Deploy the changes to start recording the absolute humidity in InfluxDB. The blue dots on the newly created nodes should disappear.
 
@@ -167,11 +196,17 @@ return msg;
 ```
 For all other properties, the default settings are ok. Press the "Done" button.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20211037.png" alt="Dew point calculation" width="600"/>
+
 To store the calculated dew point in InfluxDB, copy-paste the corresponding node and edit its properties. Change the "Measurement" field to "dewpC_eg" and press the "Done" button.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20211352.png" alt="Storing the dew point in InfluxDB" width="600"/>
 
 Finally, add the missing wire connections between the "join" node and "rh_T_to_dewpC" and on to the "InfluxDB on ..." node.
 
 If everything is set up correctly, click on "Deploy" to activate the modified flow.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20211555.png" alt="Dew point calculation connected and deployed" width="600"/>
 
 
 ## Adjust the name of the flow
