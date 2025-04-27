@@ -112,17 +112,112 @@ Next, you add a "join" node, which can be found in the "Sequence" section of the
 Double-click the "join" node to edit its properties. Set the node name to "join tC and rh". Change the "Mode" to "Manual". Change the details of the manual mode to "Join each msg.payload and create an array". Check "Use existing msg.parts property". Under "Send the message", set "after a number of message parts" to "2". Confirm these settings by clicking the "Done" button.
 
 
-### Calculating and adding the absolute humidity
+### Calculating the absolute humidity
 
-Drag a "function" node from the palette into your flow, behind the "join" node you just created. Edit the properties of the new function node by double-clicking on it.
+Drag a "function" node from the palette into your flow, and place it behind the "join" node you just created. Edit the properties of the new function node by double-clicking on it. Change the name of the node to "rh_T_to_ah" (relative humidity and temperature to absolute humidity). In the "Function" tab, enter the code below.
+```
+var t = parseFloat(flow.get('tC_eg'));
+var R = parseFloat(flow.get('rh_eg'));
+var ah_eg = null;
 
-(To be continued here...)
+msg.payload = 6.11 * R * Math.exp(17.6 * t / (243 + t)) / (0.4615 * (273 + t));
+flow.set('ah_eg', msg.payload);
 
+return msg;
+```
+Confirm the changes by clicking on the "Done" button.
+
+Connect the newly added function node to the join node by adding the corresponding wire between the two.
+
+To store this data in InfluxDB, copy-paste and edit one of the "InfluxDB on..." nodes. Edit its properties and set the "Measurement" field to "ah_eg". Click on the "Done" button and add the missing connection to the "rh_T_to_ah" node.
+
+Deploy the changes to start recording the absolute humidity in InfluxDB. The blue dots on the newly created nodes should disappear.
+
+
+### Calculating the dew point
+
+The temperature and humidity data can also be used to calculate the dew point. If the temperature drops to this value, the humidity in the air will start condensating, leading to the formation of dew. The dew point is also important for our body temperature: If the ambient air is very warm and at the same time very humid, the dew point may increase to a value above our body temperature. If this happens, our body is no longer able to control its temperature by sweating because the sweat will no longer evaporate and the cooling effect is gone. Therefore, being in an environment where the dew point is higher than the body temperature (37°C) can be dangerous. Luckily, this is normally not the case in the populated places on earth.
+
+Similar to the absolute humidity, the dew point temperature can also be calculated from the relative humidity and the temperature. The calculation is a bit more complicated because it depends on the saturation vapor pressure, which differs for water and for ice. Accordingly, the function is divided into two cases.
+
+Drag another function node from the palette to your flow and place it just below the "rh_T_to_ah" function. Double-click on the function to edit its properties. Name it "rh_T_to_dewpC". The "C" at the end indicates that the dew point calculated by the function is expressed in degrees Centigrade. In the "Function" tab, enter the code given below.
+```
+var t = parseFloat(flow.get('tC_eg'));
+var R = parseFloat(flow.get('rh_eg'));
+var dewpC_eg = null;
+
+if (t>=0) {
+    // using the Magnus formula for the saturation vapor pressure above water
+    // (valid for -45°C...+60°C)
+    // var K1 = 6.112 // hPa (not used)
+    var K2 = 17.62
+    var K3 = 243.12 // °C
+} else {
+    // using the Magnus formula for the saturation vapor pressure above ice
+    // valid for -65°C...0.01°C)
+    // var K1 = 6.112 // hPa (not used)
+    var K2 = 22.46
+    var K3 = 272.62 // °C
+}
+msg.payload = K3 * (K2 * t / (K3 + t) + Math.log(R/100)) / (K2 * K3 / (K3 + t) - Math.log(R/100));
+
+flow.set('dewpC_eg', msg.payload);
+
+return msg;
+```
+For all other properties, the default settings are ok. Press the "Done" button.
+
+To store the calculated dew point in InfluxDB, copy-paste the corresponding node and edit its properties. Change the "Measurement" field to "dewpC_eg" and press the "Done" button.
+
+Finally, add the missing wire connections between the "join" node and "rh_T_to_dewpC" and on to the "InfluxDB on ..." node.
+
+If everything is set up correctly, click on "Deploy" to activate the modified flow.
+
+
+## Adjust the name of the flow
+
+Now, the flow contains all nodes that you need for this project. As the nodes in this flow are related to the sensor on the ground floor, you might want to change the name of the flow accordingly. To change the name of the flow, click on the hamburger menu and select "Flow / Edit". The properties of the flow appear. Here, you can change the name of the flow to "EG". If you like, you can also add a description. To actiate the change, you have to click on "Deploy" again.
 
 
 ## Save the flow
 
-(Save the flow and store it somewhere outside of your RPi.)
+The flow is now saved and active on your RPi. However, you might want to save a copy of it and store it at another location, e. g. on your computer. It is always advisable to have a backup copy somewhere else.
+
+Click on the hamburger menu and select "Export". The "Export" dialog box appears. Leave all settings at their default values and click on the "Download" button. This will create a file "flow.json" in the downloads folder of your computer. Rename it to "flow_EG.json". Store it in a safe place.
+
+Note: For safety reasons, **the exported flow includes neither the credentials for the MQTT broker (Mosquitto) nor the credentials for InfluxDB**. If you'll ever have to rebuild your flow from scratch in Node-RED, importing the saved flow will not be sufficient. You'll also need the login information for these two services. Therefore, it was mentioned in the previous parts of this tutorial to **store this information in a safe place, too**. Node-RED stores this information in the "global configuration nodes", which are separate from the flows. You can see them in the right pane in the web interface of Node-RED.
+
+
+## Adding more sensors
+
+If you have multiple Shelly H&T sensors, you can now create a separate flow for each one of them. To do so, just import the flow you just saved and edit it. In my case, I have a sensor also on the first floor, for example. Instead of "eg" ("Erdgeschoss"), I'm using "og" ("Obergeschoss") for this sensor.
+
+Already at the configuration of the sensors, you'll have to use individual settings. Below is a table showing the MQTT configuration of my sensors. If you also have multiple sensors, you might want to create a similar table for your case.
+| Location     | MQTT prefix                   | Client ID                     |
+| ------------ | ----------------------------- | ----------------------------- |
+| Ground floor | shellies/altbau/eg/ht8554     | shellies/altbau/eg/ht8554     |
+| First floor  | shellies/altbau/og/ht2DA4     | shellies/altbau/og/ht2DA4     |
+| Basement     | shellies/altbau/ug/ht2D6C     | shellies/altbau/ug/ht2D6C     |
+| Cellar       | shellies/altbau/wk/ht2FF8     | shellies/altbau/wk/ht2FF8     |
+| Annex        | shellies/neubau/ug/ht46AC     | shellies/neubau/ug/ht46AC     |
+| Outside      | shellies/altbau/aussen/ht1FB0 | shellies/altbau/aussen/ht1FB0 |
+
+The names of the measurements in InfluxDB are summarized in the next table.
+|                 |      | Ground floor | 1st floor    | Basement     | Cellar       | Annex            | Outside          |
+| --------------- | ---- | ------------ | ------------ | ------------ | ------------ | ---------------- | ---------------- |
+| Temperature     | °C   | tC_eg        | tC_og        | tC_ug        | tC_wk        | tC_neubau        | tC_aussen        |
+| Rel. humidity   | %    | rh_eg        | rh_og        | rh_ug        | rh_wk        | rh_neubau        | rh_aussen        |
+| Abs. humidity   | g/m3 | ah_eg        | ah_og        | ah_ug        | ah_wk        | ah_neubau        | ah_aussen        |
+| Dew point       | °C   | dewpC_eg     | dewpC_og     | dewpC_ug     | dewpC_wk     | dewpC_neubau     | dewpC_aussen     |
+| Battery level   | %    | batt_perc_eg | batt_perc_og | batt_perc_ug | batt_perc_wk | batt_perc_neubau | batt_perc_aussen |
+| Battery voltage | V    | batt_volt_eg | batt_volt_og | batt_volt_ug | batt_volt_wk | batt_volt_neubau | batt_volt_aussen |
+As you can see, the naming follows a systematic scheme. This makes it easier to avoid mistakes.
+
+Note: The Shelly H&T sensors are **not** designed to be used outside. In my case, the one that measures the "outside" conditions is located outside under the roof, where it measures the outside temperature and humidity but is at the same time sheltered from the adverse outside conditions. Also, it is still close enough to the Wi-Fi network to have a reliable connection.
+
+For each sensor, add a flow by importing and editing the nodes. Change **all** occurrences of "_eg" by whatever you are using, according to **your** tables. I would recommend to perform these changes by copying he JSON file of your flow (copy flow_EG.json to flow_OG.json). Then, perform the changes using the search and replace functionality of a text editor. This ensures that you don't forget any change. You'll have to do three case-sensitive replacements: "_eg" to "_og" (20 replacements), "_EG" to "_OG" (3 replacements) and "EG" to "OG" (1 replacement). The last replacement only affects the name of the flow, therefore there is only one occurrence.
+
+You can then import the modified JSON file into Node-RED and all modifications are already done. Repeat this for all sensors you have.
 
 
 ## What's next?
@@ -132,4 +227,4 @@ Now that you have a growing collection of temperature and humidity data, you mig
 
 ## Links
 
-No links for this part of the tutorial.
+- [Magnus formula](https://de.wikipedia.org/wiki/Taupunkt) in the Wikipedia article on the dew point
