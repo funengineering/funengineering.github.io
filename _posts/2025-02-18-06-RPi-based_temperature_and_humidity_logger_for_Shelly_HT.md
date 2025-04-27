@@ -144,7 +144,12 @@ Finally, connect the "influxdb out" node to the "get °C temperature" by adding 
 
 Now, your RPi is collecting temperature data from the Shelly sensor and storing it in InfluxDB. Eventually, you should see the collected data in InfluxDB. However, as the sensor publishes data rather infrequently, you will have to wait some time until you see the result in InfluxDB. Wait approximately one day at this point.
 
-If you want to force the Shelly sensor to publish a new set of data, you'll have to change its temperature by more than a certain threshold. The value of this threshold is defined in the sensor's settings. I'm not aware of any other way to force the Shelly sensors to publish a new set of data.
+If you want to force the Shelly sensor to publish a new set of data, you'll have to change its temperature by more than a certain threshold. The value of this threshold is defined in the sensor's settings. I'm not aware of any other way of forcing the Shelly sensors to publish a new set of data.
+
+
+### Check for temperature data in InfluxDB
+
+After some hours, you can log into InfluxDB's web interface by going to `192.168.178.28:8086` in a browser and providing the user name and password you defined in [part 3 of this tutorial](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html). On the "Get Started" page, click on "Data Explorer" in the left pane. At the bottom of the Data Explorer view, you can create a query and the results will be shown in the top half. 
 
 
 ## Save the flow
