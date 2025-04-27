@@ -11,7 +11,7 @@ To follow these instructions, you should have the following material available
 
 ## How it works
 By following these instructions, you will be installing these software components on your RPi:
-- [Mosquitto](https://mosquitto.org/): An open source MQTT broker. This component allows the RPi to receive the temperatur and humidity data sent by your Shelly devices. They are communicating using the "Message Queueing Telemetry Transport" protocol.
+- [Mosquitto](https://mosquitto.org/): An open source MQTT broker. This component allows the RPi to receive the temperature and humidity data sent by your Shelly devices. They are communicating using the "Message Queueing Telemetry Transport" protocol.
 - [Node-RED](https://nodered.org/): A popular home automation software. Its graphical interfaces allows you to set up the collection and processing of the real-time data of the Shelly sensors. You will access its web interface from the browser of any computer in your network.
 - [InfluxDB](https://www.influxdata.com/products/influxdb/): A database solution that is specialized in time series data. It stores the temperature and humidity values and provides the visualization of the data in its web interface. It allows to generate time-series graphs, for example.
 
