@@ -266,15 +266,41 @@ Note: The Shelly H&T sensors are **not** designed to be used outside. In my case
 
 For each sensor, add a flow by importing and editing the nodes. Change **all** occurrences of "_eg" by whatever you are using, according to **your** tables. I would recommend to perform these changes by copying he JSON file of your flow (copy flow_EG.json to flow_OG.json). Then, perform the changes using the search and replace functionality of a text editor. This ensures that you don't forget any change. You'll have to do three case-sensitive replacements: "_eg" to "_og" (20 replacements), "_EG" to "_OG" (3 replacements) and "EG" to "OG" (1 replacement). The last replacement only affects the name of the flow, therefore there is only one occurrence.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20224034.png" alt="Search and replace _eg" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20224108.png" alt="Search and replace _EG" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20224447.png" alt="Search and replace EG" width="600"/>
+
 You can then import the modified JSON file into Node-RED and all modifications are already done.
 
 To import the modified flow, open the hamburger menu and select "Import". Click on "Select file for import", navigate to the location of the modified JSON file and select "Flow_OG.json". The import dialog will show the contents of the JSON file. Check if it is the right one. Below the file preview, change the setting to "Import to a new flow". Then click the "Import" button.
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225239.png" alt="Import a flow" width="300"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225250.png" alt="Import from file" width="400"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225356.png" alt="Select JSON file to import" width="400"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225441.png" alt="Preview shown and import to new flow" width="400"/>
+
 A message box will pop up, saying that some of the nodes are already present in the workspace. The nodes already present are the two "global configuration nodes" containing the login data for Mosquitto and InfluxDB. Click on the "Show Nodes..." button. In the window that pops up, the global configuration nodes are already deselected from the import. This is ok, thus you can click on the "Import selection" button. You will see a notification saying "Imported: 1 flow, 18 nodes". There are now two tabs, one labelled "EG" and another one labelled "OG". Select the "OG" tab. You can see that this flow is not yet deployed. There are blue markers everywhere. Therefore, click on "Deploy" to activate the flow. This should remove all blue dots and add the "Connected" labels underneath the "MQTT in" nodes.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225525.png" alt="Importing duplicate nodes" width="400"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225556.png" alt="Resolution of import conflict" width="300"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225611.png" alt="Flow successfully imported" width="400"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225627.png" alt="Switching to tab of newly imported flow" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225637.png" alt="Newly imported flow successfully deployed" width="600"/>
 
 Repeat this for all sensors you have.
 
 The screenshot below shows the final view in Node-RED with all flows deployed.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225845.png" alt="All imported flows successfully deployed" width="600"/>
 
 
 ## What's next?
