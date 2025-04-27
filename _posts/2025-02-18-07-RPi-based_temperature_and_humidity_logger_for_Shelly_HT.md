@@ -73,9 +73,56 @@ Deploy the updated flow to implement the changes. The "power_EG" also gets the "
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20161223.png" alt="Deployed flow including battery power nodes" width="800"/>
 
 
+## Adding calculated data: Absolute humidity and dew point (optional)
+
+Based on the knowledge of the temperature and the humidity, it is possible to calculate more data. At this point, it starts to pay that you have a powerful setup that allows to process data. So far, Node-RED only takes data from the MQTT broker and passes this same data into InfluxDB. In the next step, you will add more nodes that perform calculations with the received data before passing the calculated data to InfluxDB for storage.
+
+Note: As I don't have too much experience with Node-RED (I only started using it with this project), the solution shown here might not be the most simple one. After all, it works, which was the most important goal for me.
+
+If you are not interested in this data, you can simply skip this step.
+
+
+### Making temperature and relative humidity available for subsequent calculations
+
+First, drag a new "function" node from the palette to your flow. Place it below the "InfluxDB on ... tC_eg" node. Double-click on the "function 1" node to edit its properties. Change the "Name" field from "function 1" to "store tC_eg".
+
+In the "Function" tab of the properties, add the following code.
+```
+var tC_eg = null;
+flow.set('tC_eg', msg.payload);
+return msg;
+```
+This allows to access "tC_eg" later in other functions. For everything else, the default values are fine. Click on the "Done" button.
+
+Similarly, add another "function" node for the relative humidity. Change the node's name to "store rh_eg" and add the code below in the "Function" tab.
+```
+var rh_eg = null;
+flow.set('rh_eg', msg.payload);
+return msg;
+```
+Finish editing by clicking the "Done" button.
+
+Connect the newly added "store ..." nodes to the corresponding "get ..." nodes by adding two wires.
+
+
+### Adding a "join" node
+
+Next, you add a "join" node, which can be found in the "Sequence" section of the palette. Drag it from the palette to the right of the "store tC_eg" node. Connect the output of the "store tC_eg" node to the input of the "join" node. Then, connect the output of the "store rh_eg" node to the "join" node, too.
+
+Double-click the "join" node to edit its properties. Set the node name to "join tC and rh". Change the "Mode" to "Manual". Change the details of the manual mode to "Join each msg.payload and create an array". Check "Use existing msg.parts property". Under "Send the message", set "after a number of message parts" to "2". Confirm these settings by clicking the "Done" button.
+
+
+### Calculating and adding the absolute humidity
+
+Drag a "function" node from the palette into your flow, behind the "join" node you just created. Edit the properties of the new function node by double-clicking on it.
+
+(To be continued here...)
+
+
+
 ## Save the flow
 
-[Save the flow and store it somewhere outside of your RPi.]
+(Save the flow and store it somewhere outside of your RPi.)
 
 
 ## What's next?
