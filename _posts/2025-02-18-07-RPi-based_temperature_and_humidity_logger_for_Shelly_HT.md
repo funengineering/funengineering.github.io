@@ -217,7 +217,15 @@ Note: The Shelly H&T sensors are **not** designed to be used outside. In my case
 
 For each sensor, add a flow by importing and editing the nodes. Change **all** occurrences of "_eg" by whatever you are using, according to **your** tables. I would recommend to perform these changes by copying he JSON file of your flow (copy flow_EG.json to flow_OG.json). Then, perform the changes using the search and replace functionality of a text editor. This ensures that you don't forget any change. You'll have to do three case-sensitive replacements: "_eg" to "_og" (20 replacements), "_EG" to "_OG" (3 replacements) and "EG" to "OG" (1 replacement). The last replacement only affects the name of the flow, therefore there is only one occurrence.
 
-You can then import the modified JSON file into Node-RED and all modifications are already done. Repeat this for all sensors you have.
+You can then import the modified JSON file into Node-RED and all modifications are already done.
+
+To import the modified flow, open the hamburger menu and select "Import". Click on "Select file for import", navigate to the location of the modified JSON file and select "Flow_OG.json". The import dialog will show the contents of the JSON file. Check if it is the right one. Below the file preview, change the setting to "Import to a new flow". Then click the "Import" button.
+
+A message box will pop up, saying that some of the nodes are already present in the workspace. The nodes already present are the two "global configuration nodes" containing the login data for Mosquitto and InfluxDB. Click on the "Show Nodes..." button. In the window that pops up, the global configuration nodes are already deselected from the import. This is ok, thus you can click on the "Import selection" button. You will see a notification saying "Imported: 1 flow, 18 nodes". There are now two tabs, one labelled "EG" and another one labelled "OG". Select the "OG" tab. You can see that this flow is not yet deployed. There are blue markers everywhere. Therefore, click on "Deploy" to activate the flow. This should remove all blue dots and add the "Connected" labels underneath the "MQTT in" nodes.
+
+Repeat this for all sensors you have.
+
+The screenshot below shows the final view in Node-RED with all flows deployed.
 
 
 ## What's next?
