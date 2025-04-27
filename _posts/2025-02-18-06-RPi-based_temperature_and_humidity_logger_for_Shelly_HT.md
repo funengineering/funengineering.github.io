@@ -184,13 +184,13 @@ Double-click on the copy of the "InfluxDB on ..." node. Change the "Measurement"
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20150351.png" alt="Modifying the influxdb out node" width="600"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20150415.png" alt="Flow with original nodes and modified copies of the original nodes" width="800"/>
+Your flow in Node-RED should now have six nodes as shown in the screenshot below. To activate the modified flow, click on "Deploy". The "rh_EG" should now also show "Connected".
 
-Your flow in Node-RED should now have six nodes as shown in the screenshot. To activate the modified flow, click on "Deploy". The "rh_EG" should now also show "Connected". You just extended your flow to collect the humidity data, too. Wait some time, then check if you can also see the humidity data in InfluxDB's Data Explorer.
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20150415.png" alt="Flow with original nodes and modified copies of the original nodes" width="800"/>
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20150640.png" alt="Flow deployed after modifications" width="600"/>
 
-
+You just extended your flow to collect the humidity data, too. Wait some time, then check if you can also see the humidity data in InfluxDB's Data Explorer.
 
 
 
