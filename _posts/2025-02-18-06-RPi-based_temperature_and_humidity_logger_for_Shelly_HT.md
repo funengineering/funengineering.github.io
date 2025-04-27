@@ -149,7 +149,19 @@ If you want to force the Shelly sensor to publish a new set of data, you'll have
 
 ### Check for temperature data in InfluxDB
 
-After some hours, you can log into InfluxDB's web interface by going to `192.168.178.28:8086` in a browser and providing the user name and password you defined in [part 3 of this tutorial](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html). On the "Get Started" page, click on "Data Explorer" in the left pane. At the bottom of the Data Explorer view, you can create a query and the results will be shown in the top half. 
+After some hours, you can log into InfluxDB's web interface by going to `192.168.178.28:8086` in a browser and providing the user name and password you defined in [part 3 of this tutorial](/2025/02/18/03-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html). On the "Get Started" page, click on "Data Explorer" in the left pane. At the bottom of the Data Explorer view, you can create a query and the results will be shown in the top half.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20104508.png" alt="Switching to Data Explorer on InfluxDB web interface" width="600"/>
+
+For the query, select the "MQTT_Live" bucket in the "From" column. In the second column of the query, simply check the "tC_eg" measurement. A third column appears. Check "value". Then, select a suitable time from the drop-down, e. g. "Past 24h". The top half of the Data Explorer should now show a graph containing the measured temperature values as a function of time. If you already have data for a longer time period, you can also adjust the graph by selecting a longer time frame, e. g. "Past 7d".
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20141541.png" alt="Selections in Data Explorer to show temperature data" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20141822.png" alt="Data Explorer showing temperature data of the past 7 days" width="800"/>
+
+Now you know that all components that you were setting up so far are working. The sensor transmits its data to the MQTT broker. Node-RED takes the data from the MQTT broker and stores it in InfluxDB, where you are able to visualize it.
+
+It's thus time now to extend this working setup by collecting all data, not only the temperature.
 
 
 ## Save the flow
