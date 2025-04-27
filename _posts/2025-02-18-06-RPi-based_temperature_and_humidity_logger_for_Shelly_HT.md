@@ -1,4 +1,4 @@
-# RPi-based temperature and humidity logger for Shelly HT (Part 6: Using Node-RED to store temperature and humidity values in InfluxDB)
+# RPi-based temperature and humidity logger for Shelly HT (Part 6: Using Node-RED to collect temperature data)
 
 Now the Shelly H&T sensors transmit their data to the MQTT broker running on your Raspberry Pi. You will now create a "flow" in Node-RED that takes this data and passes it on to InfluxDB, where it is stored. With InfluxDB, it is also possible to visualize the data, but that's not the topic of this part of the tutorial. The goal of this part is only to feed the collected into InfluxDB for permanent storage.
 
@@ -161,48 +161,10 @@ At the bottom of the Data Explorer view, you can create a query and the results 
 
 Now you know that all components that you were setting up so far are working. The sensor transmits its data to the MQTT broker. Node-RED takes the data from the MQTT broker and stores it in InfluxDB, where you are able to visualize it.
 
-It's thus time now to extend this working setup by collecting all data, not only the temperature.
-
-
-### Collect humidity data in Node-RED
-
-Now, go back to Node-RED (`192.168.178.28:1880`). To create the nodes for the humidity data collection, you can just copy and paste the existing nodes and then edit the copied nodes.
-
-Select all three existing nodes by dragging a rectangle around them with the mouse. Then press Ctrl-C to copy and Ctrl-V to paste. The placement of the pasted nodes is not yet final, they are following your mouse. Move the mouse until they are positioned below the original nodes, with some space in between for adding more nodes later. Then, press the left mouse button to complete pasting.
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20144928.png" alt="Selecting the existing nodes" width="600"/>
-
-Double-click on the newly pasted copy of the "Temp_EG" node to display its properties. In the "Topic" field, replace "temperature" by "humidity". It should say "shellies/altbau/eg/ht8554/status/humidity:0". Change the "Name" field to "rh_EG" (rh standing for relative humidity). All other settings of this node can remain unchanged. Click on the "Done" button.
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20145926.png" alt="Modifying the mqtt in node" width="600"/>
-
-Double-click on the copy of the "get °C temperature" node. Change the "Name" field to "get rel. humidity". In the rules, replace "tC" by "rh". The rule should now say "Set msg.payload to the value msg.payload.rh". Click the "Done" button.
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20150218.png" alt="Modifying the change node" width="600"/>
-
-Double-click on the copy of the "InfluxDB on ..." node. Change the "Measurement" field from "tC_eg" to "rh_eg". Click the "Done" button.
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20150351.png" alt="Modifying the influxdb out node" width="600"/>
-
-Your flow in Node-RED should now have six nodes as shown in the screenshot below. To activate the modified flow, click on "Deploy". The "rh_EG" should then also show "Connected".
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20150415.png" alt="Flow with original nodes and modified copies of the original nodes" width="600"/>
-
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20150640.png" alt="Flow deployed after modifications" width="800"/>
-
-You just extended your flow to collect the humidity data, too. Wait some time, then check if you can also see the humidity data in InfluxDB's Data Explorer.
-
-
-
-
-## Save the flow
-
-[Save the flow and store it somewhere outside of your RPi.]
-
 
 ## What's next?
 
-Now that you have a growing collection of temperature and humidity data, you might want to visualize it nicely. Take a look at the next step of the tutorial to see how this is done.
+Now that the recording of temperature data is working, it's time to extend this setup. The [next part of the tutorial](/2025/02/18/07-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html) shows how to collect also the humidity data (and more).
 
 
 ## Links
