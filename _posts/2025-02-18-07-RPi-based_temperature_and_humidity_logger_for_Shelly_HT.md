@@ -3,7 +3,7 @@
 In the previous part, you verfied that the collection of the temperature data is working. Now you will extend your Node-RED flow to collect additional data: the relative humidity and the battery status of the sensor. This data will also be stored permanently in InfluxDB.
 
 
-### Collecting humidity data in Node-RED
+## Collecting humidity data in Node-RED
 
 Go to the web interface of Node-RED (`192.168.178.28:1880`). To create the nodes for the humidity data collection, you can just copy and paste the existing nodes and then edit the copied nodes.
 
@@ -32,6 +32,27 @@ Your flow in Node-RED should now have six nodes as shown in the screenshot below
 You just extended your flow to collect the humidity data, too. Wait some time, then check if you can also see the humidity data in InfluxDB's Data Explorer.
 
 
+## Collecting battery status data
+
+Similarly, you can now add nodes that collect the battery status of the sensor and store this data in InfluxDB, too.
+
+Copy and paste the three nodes related to humidity. Edit the properties of all three of them.
+
+In the copy of the "rh_EG" node, change "humidity" to "devicepower" in the "Topic" field. Change the "Name" field from "rh_EG" to "power_EG".
+
+In the copy of the "get rel. humidity" node, change the "Name" field from "get rel. humidity" to "get battery %". In the rules, replace "rh" by "battery.percent". The rule should say "Set msg.payload to the value msg.payload.battery.percent".
+
+In the copy of the "InfluxDB on ..." node, change the "Measurement" field from "rh_eg" to "batt_perc_eg".
+
+In addition to the battery status in percent, we also want to collect the battery voltage data. To add this, you only need to copy-paste the second and the third node.
+
+In the copy of the "get battery %" node, change the "Name" field from "get battery %" to "get battery V". In the rules, replace "battery.percent" by "battery.V". The rule should be "Set msg.payload to the value msg.payload.battery.V".
+
+In the copy of the "InfluxDB on ..." node, change the "Measurement" field from "batt_perc_eg" to "batt_volt_eg".
+
+Finally, add a connection wire from the "power_EG" node to the "get battery V" node.
+
+Deploy the updated flow to implement the changes. The "power_EG" also gets the "Connected" note below its node. The additional data should appear in InfluxDB's Data Explorer once the sensor has transmitted new data (which will take some time).
 
 
 ## Save the flow
