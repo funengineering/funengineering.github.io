@@ -40,19 +40,37 @@ Copy and paste the three nodes related to humidity. Edit the properties of all t
 
 In the copy of the "rh_EG" node, change "humidity" to "devicepower" in the "Topic" field. Change the "Name" field from "rh_EG" to "power_EG".
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20155703.png" alt="Receiving power status data from the sensor via MQTT" width="600"/>
+
 In the copy of the "get rel. humidity" node, change the "Name" field from "get rel. humidity" to "get battery %". In the rules, replace "rh" by "battery.percent". The rule should say "Set msg.payload to the value msg.payload.battery.percent".
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20155939.png" alt="Extracting the battery level in percent" width="600"/>
 
 In the copy of the "InfluxDB on ..." node, change the "Measurement" field from "rh_eg" to "batt_perc_eg".
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20160049.png" alt="Transmitting battery level to InfluxDB" width="600"/>
+
+Your flow should now look as shown in the screenshot below.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20160301.png" alt="Flow with battery level in percent added" width="600"/>
+
 In addition to the battery status in percent, we also want to collect the battery voltage data. To add this, you only need to copy-paste the second and the third node.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20160357.png" alt="Nodes copied to record also the battery voltage" width="600"/>
 
 In the copy of the "get battery %" node, change the "Name" field from "get battery %" to "get battery V". In the rules, replace "battery.percent" by "battery.V". The rule should be "Set msg.payload to the value msg.payload.battery.V".
 
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20160810.png" alt="Extracting the battery voltage" width="600"/>
+
 In the copy of the "InfluxDB on ..." node, change the "Measurement" field from "batt_perc_eg" to "batt_volt_eg".
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20160926.png" alt="Transmitting the battery voltage to InfluxDB" width="600"/>
 
 Finally, add a connection wire from the "power_EG" node to the "get battery V" node.
 
 Deploy the updated flow to implement the changes. The "power_EG" also gets the "Connected" note below its node. The additional data should appear in InfluxDB's Data Explorer once the sensor has transmitted new data (which will take some time).
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20161223.png" alt="Deployed flow including battery power nodes" width="800"/>
 
 
 ## Save the flow
