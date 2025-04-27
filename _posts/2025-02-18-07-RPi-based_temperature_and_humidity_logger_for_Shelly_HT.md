@@ -213,7 +213,7 @@ If everything is set up correctly, click on "Deploy" to activate the modified fl
 
 Now, the flow contains all nodes that you need for this project. As the nodes in this flow are related to the sensor on the ground floor, you might want to change the name of the flow accordingly. To change the name of the flow, click on the hamburger menu and select "Flow / Edit". The properties of the flow appear. Here, you can change the name of the flow to "EG". If you like, you can also add a description. To actiate the change, you have to click on "Deploy" again.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20212314.png" alt="Editing flow properties" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20212314.png" alt="Editing flow properties" width="300"/>
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20212425.png" alt="Changing flow name" width="600"/>
 
@@ -224,15 +224,15 @@ The flow is now saved and active on your RPi. However, you might want to save a 
 
 Click on the hamburger menu and select "Export". The "Export" dialog box appears. Leave all settings at their default values and click on the "Download" button. This will create a file "flow.json" in the downloads folder of your computer. Rename it to "flow_EG.json". Store it in a safe place.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20213250.png" alt="Exporting a flow" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20213250.png" alt="Exporting a flow" width="300"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20213532.png" alt="Flow selected" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20213532.png" alt="Flow selected" width="400"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20213553.png" alt="Flow stored in downloads folder" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20213553.png" alt="Flow stored in downloads folder" width="300"/>
 
 Note: For safety reasons, **the exported flow includes neither the credentials for the MQTT broker (Mosquitto) nor the credentials for InfluxDB**. If you'll ever have to rebuild your flow from scratch in Node-RED, importing the saved flow will not be sufficient. You'll also need the login information for these two services. Therefore, it was mentioned in the previous parts of this tutorial to **store this information in a safe place, too**. Node-RED stores this information in the "global configuration nodes", which are separate from the flows. You can see them in the right pane in the web interface of Node-RED.
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20214451.png" alt="Global configuration nodes not included in export of flow" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20214451.png" alt="Global configuration nodes not included in export of flow" width="400"/>
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20215154.png" alt="Exported JSON file containing the flow" width="600"/>
 
