@@ -242,6 +242,7 @@ Note: For safety reasons, **the exported flow includes neither the credentials f
 If you have multiple Shelly H&T sensors, you can now create a separate flow for each one of them. To do so, just import the flow you just saved and edit it. In my case, I have a sensor also on the first floor, for example. Instead of "eg" ("Erdgeschoss"), I'm using "og" ("Obergeschoss") for this sensor.
 
 Already at the configuration of the sensors, you'll have to use individual settings. Below is a table showing the MQTT configuration of my sensors. If you also have multiple sensors, you might want to create a similar table for your case.
+
 | Location     | MQTT prefix                   | Client ID                     |
 | ------------ | ----------------------------- | ----------------------------- |
 | Ground floor | shellies/altbau/eg/ht8554     | shellies/altbau/eg/ht8554     |
@@ -252,6 +253,7 @@ Already at the configuration of the sensors, you'll have to use individual setti
 | Outside      | shellies/altbau/aussen/ht1FB0 | shellies/altbau/aussen/ht1FB0 |
 
 The names of the measurements in InfluxDB are summarized in the next table.
+
 |                 |      | Ground floor | 1st floor    | Basement     | Cellar       | Annex            | Outside          |
 | --------------- | ---- | ------------ | ------------ | ------------ | ------------ | ---------------- | ---------------- |
 | Temperature     | °C   | tC_eg        | tC_og        | tC_ug        | tC_wk        | tC_neubau        | tC_aussen        |
@@ -260,17 +262,20 @@ The names of the measurements in InfluxDB are summarized in the next table.
 | Dew point       | °C   | dewpC_eg     | dewpC_og     | dewpC_ug     | dewpC_wk     | dewpC_neubau     | dewpC_aussen     |
 | Battery level   | %    | batt_perc_eg | batt_perc_og | batt_perc_ug | batt_perc_wk | batt_perc_neubau | batt_perc_aussen |
 | Battery voltage | V    | batt_volt_eg | batt_volt_og | batt_volt_ug | batt_volt_wk | batt_volt_neubau | batt_volt_aussen |
+
 As you can see, the naming follows a systematic scheme. This makes it easier to avoid mistakes.
 
 Note: The Shelly H&T sensors are **not** designed to be used outside. In my case, the one that measures the "outside" conditions is located outside under the roof, where it measures the outside temperature and humidity but is at the same time sheltered from the adverse outside conditions. Also, it is still close enough to the Wi-Fi network to have a reliable connection.
 
-For each sensor, add a flow by importing and editing the nodes. Change **all** occurrences of "_eg" by whatever you are using, according to **your** tables. I would recommend to perform these changes by copying he JSON file of your flow (copy flow_EG.json to flow_OG.json). Then, perform the changes using the search and replace functionality of a text editor. This ensures that you don't forget any change. You'll have to do three case-sensitive replacements: "_eg" to "_og" (20 replacements), "_EG" to "_OG" (3 replacements) and "EG" to "OG" (1 replacement). The last replacement only affects the name of the flow, therefore there is only one occurrence.
+For each sensor, add a flow by importing and editing the nodes. Change **all** occurrences of "_eg" by whatever you are using, according to **your** tables. As there are many replacements to be done, I recommend to perform these changes by copying he JSON file of your flow (copy flow_EG.json to flow_OG.json). Then, perform the changes using the search and replace functionality of a text editor. This ensures that you don't forget any change. You'll have to do four case-sensitive replacements: "_eg" to "_og" (20 replacements), "_EG" to "_OG" (3 replacements), "EG" to "OG" (1 replacement) and "ht8554" to "ht2DA4" (3 replacements). The third replacement only affects the name of the flow, therefore there is only one occurrence.
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20224034.png" alt="Search and replace _eg" width="600"/>
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20224108.png" alt="Search and replace _EG" width="600"/>
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20224447.png" alt="Search and replace EG" width="600"/>
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-28%20095526.png" alt="Search and replace ht8554" width="600"/>
 
 You can then import the modified JSON file into Node-RED and all modifications are already done.
 
