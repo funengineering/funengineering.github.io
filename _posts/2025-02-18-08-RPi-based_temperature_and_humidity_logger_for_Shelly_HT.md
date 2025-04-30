@@ -5,7 +5,7 @@ If you have multiple temperature and humidity sensors, it's not hard to integrat
 If you have just a single sensor: No problem! It will work fine and you can just skip this part of the tutorial, which is optional.
 
 
-### Setting up additional sensors
+## Setting up additional sensors
 
 Before you can process the sensor's data in Node-RED, your sensor needs appropriate settings. This topic was covered in [part 5 of this tutorial](/2025/02/18/05-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html). You can follow the same procedure for every additional sensor. However, each one of them needs some individual settings. Below is a table showing the MQTT configuration of my sensors. You might want to create a similar table for your case.
 
@@ -83,6 +83,15 @@ Repeat this for all sensors you have.
 The screenshot below shows the final view in Node-RED with all flows deployed.
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20225845.png" alt="All imported flows successfully deployed" width="600"/>
+
+
+## Result
+
+Once the flows for the sensors are deployed, they are filling your sensor's data into InfluxDB. To check if it's working, take a look at the Data Explorer in InfluxDB. As before, let some time pass before you check. The sensors provide new data only occasionally.
+
+If everything is working fine, you should see that additional data is now visible in InfluxDB.
+
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-30%20164550.png" alt="Temperature data of multiple sensors" width="600"/>
 
 
 ## What's next?
