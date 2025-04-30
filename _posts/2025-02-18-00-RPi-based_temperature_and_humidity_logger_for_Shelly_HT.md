@@ -25,7 +25,8 @@ The main steps are:
 5. [Part 5: Configuration of the Shelly devices](/2025/02/18/05-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
 6. [Part 6: Using Node-RED to collect temperature data](/2025/02/18/06-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
 7. [Part 7: Collecting humidity data (and more)](/2025/02/18/07-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
-8. Part 8: Creating a dashboard that shows the data graphically
+8. [Part 8: Using multiple sensors](/2025/02/18/08-RPi-based_temperature_and_humidity_logger_for_Shelly_HT.html)
+9. Part 9: Creating a dashboard that shows the data graphically
 
 Read the parts, follow the instructions and enjoy the result!
 
