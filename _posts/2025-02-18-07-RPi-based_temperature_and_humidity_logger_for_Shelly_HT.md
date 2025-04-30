@@ -267,7 +267,7 @@ As you can see, the naming follows a systematic scheme. This makes it easier to 
 
 Note: The Shelly H&T sensors are **not** designed to be used outside. In my case, the one that measures the "outside" conditions is located outside under the roof, where it measures the outside temperature and humidity but is at the same time sheltered from the adverse outside conditions. Also, it is still close enough to the Wi-Fi network to have a reliable connection.
 
-For each sensor, add a flow by importing and editing the nodes. Change **all** occurrences of "_eg" by whatever you are using, according to **your** tables. As there are many replacements to be done, I recommend to perform these changes by copying he JSON file of your flow (copy flow_EG.json to flow_OG.json). Then, perform the changes using the search and replace functionality of a text editor. This ensures that you don't forget any change. You'll have to do four case-sensitive replacements: "_eg" to "_og" (20 replacements), "_EG" to "_OG" (3 replacements), "EG" to "OG" (1 replacement) and "ht8554" to "ht2DA4" (3 replacements). The third replacement only affects the name of the flow, therefore there is only one occurrence.
+For each sensor, add a flow by importing and editing the nodes. Change **all** occurrences of "_eg" by whatever you are using, according to **your** tables. As there are many replacements to be done, I recommend to perform these changes by copying he JSON file of your flow (copy flow_EG.json to flow_OG.json). Then, perform the changes using the search and replace functionality of a text editor. This ensures that you don't forget any change. You'll have to do four case-sensitive replacements: "_eg" to "_og" (20 replacements), "_EG" to "_OG" (3 replacements), "EG" to "OG" (1 replacement) and "altbau/eg/ht8554" to "altbau/og/ht2DA4" (3 replacements). The third replacement only affects the name of the flow, therefore there is only one occurrence.
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20224034.png" alt="Search and replace _eg" width="600"/>
 
@@ -275,7 +275,7 @@ For each sensor, add a flow by importing and editing the nodes. Change **all** o
 
 <img src="/docs/assets/img/ht_logger/Screenshot%202025-04-27%20224447.png" alt="Search and replace EG" width="600"/>
 
-<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-28%20095526.png" alt="Search and replace ht8554" width="600"/>
+<img src="/docs/assets/img/ht_logger/Screenshot%202025-04-30%20163910.png" alt="Search and replace ht8554" width="600"/>
 
 You can then import the modified JSON file into Node-RED and all modifications are already done.
 
